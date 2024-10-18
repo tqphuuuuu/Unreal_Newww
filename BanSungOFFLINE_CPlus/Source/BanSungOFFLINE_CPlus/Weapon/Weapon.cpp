@@ -51,6 +51,8 @@ void AWeapon::Fire()
 
 		// Thực hiện bắn đạn Pistol
 		FTransform x = GunMesh->GetSocketTransform("Socket_Point");
+		UKismetSystemLibrary::PrintString(this, x.GetLocation().ToString());
+
 		GetWorld()->SpawnActor<AProjectiles_Pistol>(Projectile_Pistol, x);
 	}
 	else if (Type == 1)  // Type 1 là Rifle
@@ -59,6 +61,8 @@ void AWeapon::Fire()
 		UKismetSystemLibrary::PrintString(this,"Xem có chạy không1");
 
 		FTransform x = GunMesh->GetSocketTransform("Socket_Point");
+		UKismetSystemLibrary::PrintString(this, x.GetLocation().ToString());
+
 		GetWorld()->SpawnActor<AProjectiles_Rifle>(Projectile_Rifle, x);
 	}
 
