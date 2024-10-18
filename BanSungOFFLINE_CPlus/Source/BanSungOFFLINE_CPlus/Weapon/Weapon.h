@@ -3,6 +3,8 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "BanSungOFFLINE_CPlus/Projectiles/Projectiles_Pistol.h"
+#include "BanSungOFFLINE_CPlus/Projectiles/Projectiles_Rifle.h"
 #include "GameFramework/Actor.h"
 #include "Weapon.generated.h"
 
@@ -27,10 +29,14 @@ protected:
 	class USphereComponent* SphereComponent;
 
 	UPROPERTY(EditAnywhere,BlueprintReadOnly,Category=Input,meta=(AllowPrivateAccess = "true"))
-	TSubclassOf<AActor> Projectile_Pistol= AActor::StaticClass();
+	TSubclassOf<AProjectiles_Pistol> Projectile_Pistol= AProjectiles_Pistol::StaticClass();
 
 	UPROPERTY(EditAnywhere,BlueprintReadOnly,Category=Input,meta=(AllowPrivateAccess = "true"))
-	TSubclassOf<AActor>Projectile_Rifle = AActor::StaticClass();
+	TSubclassOf<AProjectiles_Rifle>Projectile_Rifle = AProjectiles_Rifle::StaticClass();
+
+	
+
+	
 
 
 public:

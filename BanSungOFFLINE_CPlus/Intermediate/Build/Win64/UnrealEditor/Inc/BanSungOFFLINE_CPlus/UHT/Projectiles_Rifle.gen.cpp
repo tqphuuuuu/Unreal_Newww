@@ -79,10 +79,10 @@ AProjectiles_Rifle::~AProjectiles_Rifle() {}
 struct Z_CompiledInDeferFile_FID_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_Projectiles_Projectiles_Rifle_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AProjectiles_Rifle, AProjectiles_Rifle::StaticClass, TEXT("AProjectiles_Rifle"), &Z_Registration_Info_UClass_AProjectiles_Rifle, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AProjectiles_Rifle), 491808276U) },
+		{ Z_Construct_UClass_AProjectiles_Rifle, AProjectiles_Rifle::StaticClass, TEXT("AProjectiles_Rifle"), &Z_Registration_Info_UClass_AProjectiles_Rifle, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AProjectiles_Rifle), 1586316201U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_Projectiles_Projectiles_Rifle_h_3284111250(TEXT("/Script/BanSungOFFLINE_CPlus"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_Projectiles_Projectiles_Rifle_h_2780420458(TEXT("/Script/BanSungOFFLINE_CPlus"),
 	Z_CompiledInDeferFile_FID_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_Projectiles_Projectiles_Rifle_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_Projectiles_Projectiles_Rifle_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

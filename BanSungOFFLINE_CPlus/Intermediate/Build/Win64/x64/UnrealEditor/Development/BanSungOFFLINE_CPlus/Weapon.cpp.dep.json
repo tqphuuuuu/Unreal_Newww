@@ -7,6 +7,12 @@
         "Includes": [
             "e:\\unreal_newww\\bansungoffline_cplus\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\bansungoffline_cplus\\definitions.bansungoffline_cplus.h",
             "e:\\unreal_newww\\bansungoffline_cplus\\source\\bansungoffline_cplus\\weapon\\weapon.h",
+            "e:\\unreal_newww\\bansungoffline_cplus\\source\\bansungoffline_cplus\\projectiles\\projectiles_pistol.h",
+            "e:\\unreal_newww\\bansungoffline_cplus\\source\\bansungoffline_cplus\\projectiles\\projectiles.h",
+            "e:\\unreal_newww\\bansungoffline_cplus\\intermediate\\build\\win64\\unrealeditor\\inc\\bansungoffline_cplus\\uht\\projectiles.generated.h",
+            "e:\\unreal_newww\\bansungoffline_cplus\\intermediate\\build\\win64\\unrealeditor\\inc\\bansungoffline_cplus\\uht\\projectiles_pistol.generated.h",
+            "e:\\unreal_newww\\bansungoffline_cplus\\source\\bansungoffline_cplus\\projectiles\\projectiles_rifle.h",
+            "e:\\unreal_newww\\bansungoffline_cplus\\intermediate\\build\\win64\\unrealeditor\\inc\\bansungoffline_cplus\\uht\\projectiles_rifle.generated.h",
             "e:\\unreal_newww\\bansungoffline_cplus\\intermediate\\build\\win64\\unrealeditor\\inc\\bansungoffline_cplus\\uht\\weapon.generated.h",
             "e:\\unreal_newww\\bansungoffline_cplus\\source\\bansungoffline_cplus\\bansungoffline_cpluscharacter.h",
             "e:\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\gameframework\\character.h",

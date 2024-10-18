@@ -79,10 +79,10 @@ AWeapon_Rifle::~AWeapon_Rifle() {}
 struct Z_CompiledInDeferFile_FID_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_Weapon_Weapon_Rifle_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AWeapon_Rifle, AWeapon_Rifle::StaticClass, TEXT("AWeapon_Rifle"), &Z_Registration_Info_UClass_AWeapon_Rifle, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AWeapon_Rifle), 2625645572U) },
+		{ Z_Construct_UClass_AWeapon_Rifle, AWeapon_Rifle::StaticClass, TEXT("AWeapon_Rifle"), &Z_Registration_Info_UClass_AWeapon_Rifle, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AWeapon_Rifle), 202499066U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_Weapon_Weapon_Rifle_h_1981742815(TEXT("/Script/BanSungOFFLINE_CPlus"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_Weapon_Weapon_Rifle_h_175344904(TEXT("/Script/BanSungOFFLINE_CPlus"),
 	Z_CompiledInDeferFile_FID_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_Weapon_Weapon_Rifle_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_Weapon_Weapon_Rifle_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

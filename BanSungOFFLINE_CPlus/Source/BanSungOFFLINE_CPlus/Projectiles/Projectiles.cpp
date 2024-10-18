@@ -4,6 +4,7 @@
 #include "Projectiles.h"
 
 #include "Components/SphereComponent.h"
+#include "GameFramework/ProjectileMovementComponent.h"
 
 
 // Sets default values
@@ -18,6 +19,11 @@ AProjectiles::AProjectiles()
 	
 	Projectiles = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Gun_Pistol"));
 	Projectiles->SetupAttachment(SphereComponent);
+
+	ProjectileMovement = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("ProjectileMovement"));
+
+	ProjectileMovement->InitialSpeed = 3000.0f;  // Tốc độ ban đầu
+	ProjectileMovement->MaxSpeed = 3000.0f;      // Tốc độ tối đa
 
 	
 }

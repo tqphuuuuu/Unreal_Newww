@@ -43,21 +43,23 @@ void AWeapon::Fire()
 	
 	UKismetSystemLibrary::PrintString(this,"Da Click");
 	
-	ABanSungOFFLINE_CPlusCharacter* MyCharacter = Cast<ABanSungOFFLINE_CPlusCharacter>(GetOwner());
-
 	
 	// Kiểm tra Type để quyết định loại đạn cần bắn
 	if ( Type == 0)  // Type 0 là Pistol
 	{
+		UKismetSystemLibrary::PrintString(this,"Xem có chạy không");
+
 		// Thực hiện bắn đạn Pistol
 		FTransform x = GunMesh->GetSocketTransform("Socket_Point");
-		GetWorld()->SpawnActor<AActor>(Projectile_Pistol, x);
+		GetWorld()->SpawnActor<AProjectiles_Pistol>(Projectile_Pistol, x);
 	}
 	else if (Type == 1)  // Type 1 là Rifle
 	{
 		// Thực hiện bắn đạn Rifle
+		UKismetSystemLibrary::PrintString(this,"Xem có chạy không1");
+
 		FTransform x = GunMesh->GetSocketTransform("Socket_Point");
-		GetWorld()->SpawnActor<AActor>(Projectile_Rifle, x);
+		GetWorld()->SpawnActor<AProjectiles_Rifle>(Projectile_Rifle, x);
 	}
 
 	// Trừ đạn sau khi bắn
