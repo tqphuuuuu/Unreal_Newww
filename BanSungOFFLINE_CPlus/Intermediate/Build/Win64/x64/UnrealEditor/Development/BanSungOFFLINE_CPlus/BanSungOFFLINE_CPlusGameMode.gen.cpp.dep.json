@@ -1,17 +1,17 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "c:\\users\\os\\documents\\unreal projects\\bansungoffline_cplus\\intermediate\\build\\win64\\unrealeditor\\inc\\bansungoffline_cplus\\uht\\bansungoffline_cplusgamemode.gen.cpp",
+        "Source": "e:\\unreal_newww\\bansungoffline_cplus\\intermediate\\build\\win64\\unrealeditor\\inc\\bansungoffline_cplus\\uht\\bansungoffline_cplusgamemode.gen.cpp",
         "ProvidedModule": "",
-        "PCH": "c:\\users\\os\\documents\\unreal projects\\bansungoffline_cplus\\intermediate\\build\\win64\\x64\\bansungoffline_cpluseditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "PCH": "e:\\unreal_newww\\bansungoffline_cplus\\intermediate\\build\\win64\\x64\\bansungoffline_cpluseditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
         "Includes": [
-            "c:\\users\\os\\documents\\unreal projects\\bansungoffline_cplus\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\bansungoffline_cplus\\definitions.bansungoffline_cplus.h",
-            "c:\\users\\os\\documents\\unreal projects\\bansungoffline_cplus\\source\\bansungoffline_cplus\\bansungoffline_cplusgamemode.h",
+            "e:\\unreal_newww\\bansungoffline_cplus\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\bansungoffline_cplus\\definitions.bansungoffline_cplus.h",
+            "e:\\unreal_newww\\bansungoffline_cplus\\source\\bansungoffline_cplus\\bansungoffline_cplusgamemode.h",
             "e:\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\gameframework\\gamemodebase.h",
             "e:\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\engine\\serverstatreplicator.h",
             "e:\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\serverstatreplicator.generated.h",
             "e:\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gamemodebase.generated.h",
-            "c:\\users\\os\\documents\\unreal projects\\bansungoffline_cplus\\intermediate\\build\\win64\\unrealeditor\\inc\\bansungoffline_cplus\\uht\\bansungoffline_cplusgamemode.generated.h"
+            "e:\\unreal_newww\\bansungoffline_cplus\\intermediate\\build\\win64\\unrealeditor\\inc\\bansungoffline_cplus\\uht\\bansungoffline_cplusgamemode.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

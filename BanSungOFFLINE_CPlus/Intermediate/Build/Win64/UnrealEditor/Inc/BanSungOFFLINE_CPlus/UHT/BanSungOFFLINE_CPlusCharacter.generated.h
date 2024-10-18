@@ -14,7 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define BANSUNGOFFLINE_CPLUS_BanSungOFFLINE_CPlusCharacter_generated_h
 
-#define FID_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_BanSungOFFLINE_CPlusCharacter_h_12_INCLASS_NO_PURE_DECLS \
+#define FID_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_BanSungOFFLINE_CPlusCharacter_h_12_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesABanSungOFFLINE_CPlusCharacter(); \
 	friend struct Z_Construct_UClass_ABanSungOFFLINE_CPlusCharacter_Statics; \
@@ -23,7 +23,7 @@ public: \
 	DECLARE_SERIALIZER(ABanSungOFFLINE_CPlusCharacter)
 
 
-#define FID_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_BanSungOFFLINE_CPlusCharacter_h_12_ENHANCED_CONSTRUCTORS \
+#define FID_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_BanSungOFFLINE_CPlusCharacter_h_12_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	ABanSungOFFLINE_CPlusCharacter(ABanSungOFFLINE_CPlusCharacter&&); \
@@ -35,12 +35,12 @@ public: \
 	NO_API virtual ~ABanSungOFFLINE_CPlusCharacter();
 
 
-#define FID_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_BanSungOFFLINE_CPlusCharacter_h_9_PROLOG
-#define FID_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_BanSungOFFLINE_CPlusCharacter_h_12_GENERATED_BODY \
+#define FID_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_BanSungOFFLINE_CPlusCharacter_h_9_PROLOG
+#define FID_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_BanSungOFFLINE_CPlusCharacter_h_12_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_BanSungOFFLINE_CPlusCharacter_h_12_INCLASS_NO_PURE_DECLS \
-	FID_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_BanSungOFFLINE_CPlusCharacter_h_12_ENHANCED_CONSTRUCTORS \
+	FID_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_BanSungOFFLINE_CPlusCharacter_h_12_INCLASS_NO_PURE_DECLS \
+	FID_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_BanSungOFFLINE_CPlusCharacter_h_12_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -48,7 +48,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> BANSUNGOFFLINE_CPLUS_API UClass* StaticClass<class ABanSungOFFLINE_CPlusCharacter>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_BanSungOFFLINE_CPlusCharacter_h
+#define CURRENT_FILE_ID FID_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_BanSungOFFLINE_CPlusCharacter_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

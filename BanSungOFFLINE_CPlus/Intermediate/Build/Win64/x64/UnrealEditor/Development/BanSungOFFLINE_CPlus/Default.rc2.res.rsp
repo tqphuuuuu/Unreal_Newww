@@ -81,5 +81,5 @@
 /DPROJECT_COPYRIGHT_STRING="Fill out your copyright notice in the Description page of Project Settings."
 /DPROJECT_PRODUCT_NAME="Top Down Game Template"
 /DPROJECT_PRODUCT_IDENTIFIER=BanSungOFFLINE_CPlus
-/fo "C:\Users\OS\Documents\Unreal Projects\BanSungOFFLINE_CPlus\Intermediate\Build\Win64\x64\UnrealEditor\Development\BanSungOFFLINE_CPlus\Default.rc2.res"
+/fo "E:\Unreal_Newww\BanSungOFFLINE_CPlus\Intermediate\Build\Win64\x64\UnrealEditor\Development\BanSungOFFLINE_CPlus\Default.rc2.res"
 "..\Build\Windows\Resources\Default.rc2"

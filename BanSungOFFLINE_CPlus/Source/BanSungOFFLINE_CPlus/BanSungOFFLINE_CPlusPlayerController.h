@@ -3,8 +3,11 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "InputActionValue.h"
 #include "Templates/SubclassOf.h"
 #include "GameFramework/PlayerController.h"
+#include "Delegates/DelegateCombinations.h"
+
 #include "BanSungOFFLINE_CPlusPlayerController.generated.h"
 
 /** Forward declaration to improve compiling times */
@@ -42,6 +45,10 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess = "true"))
 	UInputAction* SetDestinationTouchAction;
 
+	// Move Action
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess = "true"))
+	UInputAction* MoveAction;
+
 protected:
 	/** True if the controlled character should navigate to the mouse cursor. */
 	uint32 bMoveToMouseCursor : 1;
@@ -50,6 +57,8 @@ protected:
 	
 	// To add mapping context
 	virtual void BeginPlay();
+	virtual void Tick(float DeltaSeconds) override;
+
 
 	/** Input handlers for SetDestination action. */
 	void OnInputStarted();
@@ -57,6 +66,11 @@ protected:
 	void OnSetDestinationReleased();
 	void OnTouchTriggered();
 	void OnTouchReleased();
+	void OnMouseReleased ();
+	void OnMouseButtonReleased();
+	void OnMoveAction(const FInputActionValue& Value);
+
+
 
 private:
 	FVector CachedDestination;

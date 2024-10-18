@@ -1,0 +1,19 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-BanSungOFFLINE_CPlus.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\OS\Documents\Unreal Projects\BanSungOFFLINE_CPlus\Intermediate\Build\Win64\x64\BanSungOFFLINE_CPlusEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.obj"
+"C:\Users\OS\Documents\Unreal Projects\BanSungOFFLINE_CPlus\Intermediate\Build\Win64\x64\UnrealEditor\Development\BanSungOFFLINE_CPlus\BanSungOFFLINE_CPlus.init.gen.cpp.obj"
+"C:\Users\OS\Documents\Unreal Projects\BanSungOFFLINE_CPlus\Intermediate\Build\Win64\x64\UnrealEditor\Development\BanSungOFFLINE_CPlus\BanSungOFFLINE_CPlusCharacter.gen.cpp.obj"
+"C:\Users\OS\Documents\Unreal Projects\BanSungOFFLINE_CPlus\Intermediate\Build\Win64\x64\UnrealEditor\Development\BanSungOFFLINE_CPlus\BanSungOFFLINE_CPlusGameMode.gen.cpp.obj"
+"C:\Users\OS\Documents\Unreal Projects\BanSungOFFLINE_CPlus\Intermediate\Build\Win64\x64\UnrealEditor\Development\BanSungOFFLINE_CPlus\BanSungOFFLINE_CPlusPlayerController.gen.cpp.obj"
+"C:\Users\OS\Documents\Unreal Projects\BanSungOFFLINE_CPlus\Intermediate\Build\Win64\x64\UnrealEditor\Development\BanSungOFFLINE_CPlus\BanSungOFFLINE_CPlus.cpp.obj"
+"C:\Users\OS\Documents\Unreal Projects\BanSungOFFLINE_CPlus\Intermediate\Build\Win64\x64\UnrealEditor\Development\BanSungOFFLINE_CPlus\BanSungOFFLINE_CPlusCharacter.cpp.obj"
+"C:\Users\OS\Documents\Unreal Projects\BanSungOFFLINE_CPlus\Intermediate\Build\Win64\x64\UnrealEditor\Development\BanSungOFFLINE_CPlus\BanSungOFFLINE_CPlusGameMode.cpp.obj"
+"C:\Users\OS\Documents\Unreal Projects\BanSungOFFLINE_CPlus\Intermediate\Build\Win64\x64\UnrealEditor\Development\BanSungOFFLINE_CPlus\BanSungOFFLINE_CPlusPlayerController.cpp.obj"
+"C:\Users\OS\Documents\Unreal Projects\BanSungOFFLINE_CPlus\Intermediate\Build\Win64\x64\UnrealEditor\Development\BanSungOFFLINE_CPlus\Default.rc2.res"
+/OUT:"C:\Users\OS\Documents\Unreal Projects\BanSungOFFLINE_CPlus\Intermediate\Build\Win64\x64\UnrealEditor\Development\BanSungOFFLINE_CPlus\UnrealEditor-BanSungOFFLINE_CPlus.lib"
