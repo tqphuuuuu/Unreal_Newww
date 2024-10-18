@@ -15,6 +15,9 @@ class UNiagaraSystem;
 class UInputMappingContext;
 class UInputAction;
 
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FBulletCount);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDisplayWBBulletCount);
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
 UCLASS()
@@ -49,6 +52,20 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess = "true"))
 	UInputAction* MoveAction;
 
+
+	// Tạo key board
+	UPROPERTY(EditAnywhere,BlueprintReadOnly,Category=Input,meta=(AllowPrivateAccess="true"))
+	UInputAction* Key_BoardPisol;
+	UPROPERTY(EditAnywhere,BlueprintReadOnly,Category=Input,meta=(AllowPrivateAccess="true"))
+	UInputAction* Key_BoardRifle;
+
+	UPROPERTY(EditAnywhere,BlueprintReadOnly,Category=Input,meta=(AllowPrivateAccess="true"))
+	UInputAction* keyBoardReloadAmmo;
+
+	//UI AMmo
+	UPROPERTY(BlueprintAssignable)
+	FDisplayWBBulletCount ShowWBCountBullet;
+	
 protected:
 	/** True if the controlled character should navigate to the mouse cursor. */
 	uint32 bMoveToMouseCursor : 1;
@@ -69,6 +86,13 @@ protected:
 	void OnMouseReleased ();
 	void OnMouseButtonReleased();
 	void OnMoveAction(const FInputActionValue& Value);
+	void OnKeyBoard_Pistol(const FInputActionValue& Value);
+	void OnKeyBoard_Rifle(const FInputActionValue& Value);
+	void OnKeyBoard_ReloadAmmo(const FInputActionValue& Value);
+
+
+
+	bool bIsShooting = false; //  biến để theo dõi trạng thái bấm chuột
 
 
 
@@ -77,6 +101,8 @@ private:
 
 	bool bIsTouch; // Is it a touch device
 	float FollowTime; // For how long it has been pressed
+	
+	
 };
 
 

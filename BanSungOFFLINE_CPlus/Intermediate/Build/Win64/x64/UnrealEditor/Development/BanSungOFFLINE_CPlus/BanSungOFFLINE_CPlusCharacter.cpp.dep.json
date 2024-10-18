@@ -15,6 +15,8 @@
             "e:\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\gameframework\\rootmotionsource.h",
             "e:\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\rootmotionsource.generated.h",
             "e:\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\character.generated.h",
+            "e:\\unreal_newww\\bansungoffline_cplus\\source\\bansungoffline_cplus\\weapon\\weapon.h",
+            "e:\\unreal_newww\\bansungoffline_cplus\\intermediate\\build\\win64\\unrealeditor\\inc\\bansungoffline_cplus\\uht\\weapon.generated.h",
             "e:\\unreal_newww\\bansungoffline_cplus\\intermediate\\build\\win64\\unrealeditor\\inc\\bansungoffline_cplus\\uht\\bansungoffline_cpluscharacter.generated.h",
             "e:\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\camera\\cameracomponent.h",
             "e:\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\cameracomponent.generated.h",
@@ -43,7 +45,14 @@
             "e:\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\charactermovementcomponentasync.generated.h",
             "e:\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\charactermovementcomponent.generated.h",
             "e:\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\gameframework\\springarmcomponent.h",
-            "e:\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\springarmcomponent.generated.h"
+            "e:\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\springarmcomponent.generated.h",
+            "e:\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\kismet\\kismetsystemlibrary.h",
+            "e:\\ue_5.4\\engine\\source\\runtime\\coreuobject\\public\\uobject\\propertyaccessutil.h",
+            "e:\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\kismetsystemlibrary.generated.h",
+            "e:\\unreal_newww\\bansungoffline_cplus\\source\\bansungoffline_cplus\\weapon\\weapon_pistol.h",
+            "e:\\unreal_newww\\bansungoffline_cplus\\intermediate\\build\\win64\\unrealeditor\\inc\\bansungoffline_cplus\\uht\\weapon_pistol.generated.h",
+            "e:\\unreal_newww\\bansungoffline_cplus\\source\\bansungoffline_cplus\\weapon\\weapon_rifle.h",
+            "e:\\unreal_newww\\bansungoffline_cplus\\intermediate\\build\\win64\\unrealeditor\\inc\\bansungoffline_cplus\\uht\\weapon_rifle.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

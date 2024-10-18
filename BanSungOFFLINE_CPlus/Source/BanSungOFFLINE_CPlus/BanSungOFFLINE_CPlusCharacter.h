@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Weapon/Weapon.h"
 #include "BanSungOFFLINE_CPlusCharacter.generated.h"
 
 UCLASS(Blueprintable)
@@ -21,6 +22,32 @@ public:
 	FORCEINLINE class UCameraComponent* GetTopDownCameraComponent() const { return TopDownCameraComponent; }
 	/** Returns CameraBoom subobject **/
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
+	// Overlap
+	virtual void NotifyActorBeginOverlap(AActor* OtherActor) override; 
+
+	void AddWeapon(AWeapon* NewWeapon);  // Hàm thêm vũ khí
+
+	// Mảng chứa cả Pistol và Rifle
+	TArray<class AWeapon*> Weapons;
+
+	void InitializeWeaponClasses();
+	// Hàm kiểm tra trong mảng có gì
+	void PrintAllWeaponsInArray();
+	// Hàm show vũ khí
+	void ShowWeapon(int32 Type);
+
+	// Biến hiện UI
+	UPROPERTY(BlueprintReadOnly)
+	int Cur_weapon = 0;
+
+	UPROPERTY(EditAnywhere,BlueprintReadOnly,Category="Weapon");
+	AWeapon* CurrentWeapon;
+
+	//Kiểm tra hiển thị của súng
+	UFUNCTION(BlueprintCallable, Category = "Weapon")
+	bool IsWeaponVisible(TSubclassOf<AWeapon> WeaponClass);
+
+
 
 private:
 	/** Top down camera */

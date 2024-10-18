@@ -3,7 +3,6 @@
 #include "BanSungOFFLINE_CPlusPlayerController.h"
 #include "GameFramework/Pawn.h"
 #include "Blueprint/AIBlueprintHelperLibrary.h"
-#include "NiagaraSystem.h"
 #include "NiagaraFunctionLibrary.h"
 #include "BanSungOFFLINE_CPlusCharacter.h"
 #include "Engine/World.h"
@@ -12,6 +11,9 @@
 #include "EnhancedInputSubsystems.h"
 #include "Engine/LocalPlayer.h"
 #include "Kismet/KismetMathLibrary.h"
+#include "Kismet/KismetSystemLibrary.h"
+#include "Weapon/Weapon_Pistol.h"
+#include "Weapon/Weapon_Rifle.h"
 
 DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 
@@ -73,9 +75,9 @@ void ABanSungOFFLINE_CPlusPlayerController::SetupInputComponent()
 
 		// Move W S A D
 		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &ABanSungOFFLINE_CPlusPlayerController::OnMoveAction);
-		/*EnhancedInputComponent->BindAction(Key_BoardPisol, ETriggerEvent::Triggered, this, &ABanSungOFFLINE_CPlusPlayerController::OnKeyBoard_Pistol);
+		EnhancedInputComponent->BindAction(Key_BoardPisol, ETriggerEvent::Triggered, this, &ABanSungOFFLINE_CPlusPlayerController::OnKeyBoard_Pistol);
 		EnhancedInputComponent->BindAction(Key_BoardRifle, ETriggerEvent::Triggered, this, &ABanSungOFFLINE_CPlusPlayerController::OnKeyBoard_Rifle);
-		EnhancedInputComponent->BindAction(keyBoardReloadAmmo, ETriggerEvent::Started, this, &ABanSungOFFLINE_CPlusPlayerController::OnKeyBoard_ReloadAmmo);*/
+		EnhancedInputComponent->BindAction(keyBoardReloadAmmo, ETriggerEvent::Started, this, &ABanSungOFFLINE_CPlusPlayerController::OnKeyBoard_ReloadAmmo);
 
 		
 
@@ -116,6 +118,32 @@ void ABanSungOFFLINE_CPlusPlayerController::OnSetDestinationTriggered()
 	{
 		CachedDestination = Hit.Location;
 	}
+	
+		// Lấy tham chiếu đến nhân vật
+		ABanSungOFFLINE_CPlusCharacter* MyCharacter = Cast<ABanSungOFFLINE_CPlusCharacter>(GetPawn());
+
+		if (!MyCharacter) return;
+
+		// Tìm kiếm súng hiện tại trong mảng Weapons dựa trên loại Type
+		AWeapon* SelectedWeapon = nullptr;
+		for (AWeapon* Weapon : MyCharacter->Weapons)
+		{
+			if (Weapon && MyCharacter->IsWeaponVisible(Weapon->GetClass()))  // Kiểm tra xem súng nào đang hiển thị
+			{
+				SelectedWeapon = Weapon;
+				break;  // Dừng vòng lặp sau khi tìm thấy súng đang hiển thị
+			}
+		}
+
+		// Nếu tìm thấy súng hiện tại
+		if (SelectedWeapon)
+		{
+			if (SelectedWeapon->CurrentAmmo >= 1)
+			{
+				Cast<AWeapon>(MyCharacter->CurrentWeapon)->Fire();
+			}
+		}
+	
 
 	
 	// Move towards mouse pointer or touch
@@ -181,4 +209,92 @@ void ABanSungOFFLINE_CPlusPlayerController::OnMouseReleased()
 void ABanSungOFFLINE_CPlusPlayerController::OnMouseButtonReleased()
 {
 	// Code xử lý khi nút chuột được thả
+}
+void ABanSungOFFLINE_CPlusPlayerController::OnKeyBoard_Pistol(const FInputActionValue& Value)
+{
+	// Log để kiểm tra xem phím bàn phím có được nhấn hay không
+	UKismetSystemLibrary::PrintString(this,"So 1");
+	
+
+	ABanSungOFFLINE_CPlusCharacter* MyCharacter = Cast<ABanSungOFFLINE_CPlusCharacter>(GetCharacter());
+	
+	if (MyCharacter)
+	{
+		MyCharacter->ShowWeapon(0);
+		ShowWBCountBullet.Broadcast();
+		MyCharacter->Cur_weapon = 1;
+		auto Weapon_Array = MyCharacter->Weapons;
+		for (auto i:Weapon_Array)
+		{
+			if (Cast<AWeapon_Pistol>(i))
+			{
+				MyCharacter->CurrentWeapon = i;
+				break;
+			}
+		}
+		
+	}
+		
+}
+
+void ABanSungOFFLINE_CPlusPlayerController::OnKeyBoard_Rifle(const FInputActionValue& Value)
+{
+	// Log để kiểm tra xem phím bàn phím có được nhấn hay không
+	UKismetSystemLibrary::PrintString(this,"So 2");
+	
+
+	ABanSungOFFLINE_CPlusCharacter* MyCharacter = Cast<ABanSungOFFLINE_CPlusCharacter>(GetCharacter());
+	
+	
+
+	if (MyCharacter)
+	{
+		MyCharacter->ShowWeapon(1);
+		ShowWBCountBullet.Broadcast();
+		MyCharacter->Cur_weapon = 1;
+		auto Weapon_Array = MyCharacter->Weapons;
+		for (auto i:Weapon_Array)
+		{
+			if (Cast<AWeapon_Rifle>(i))
+			{
+				MyCharacter->CurrentWeapon = i;
+				break;
+			}
+		}
+		
+	}
+		
+}
+
+void ABanSungOFFLINE_CPlusPlayerController::OnKeyBoard_ReloadAmmo(const FInputActionValue& Value)
+{
+	// Log để kiểm tra xem phím bàn phím có được nhấn hay không
+	UKismetSystemLibrary::PrintString(this,"Phim R");
+	
+
+	/*ABanSungOFFLINE_CCharacter* MyCharacter = Cast<ABanSungOFFLINE_CCharacter>(GetCharacter());
+	
+	/*if (MyCharacter)
+	{
+		MyCharacter->ShowPistol();
+		
+	}#1#
+
+	if (MyCharacter)
+	{
+		MyCharacter->ShowWeapon(0);
+		ShowWBCountBullet.Broadcast();
+		MyCharacter->Cur_weapon = 1;
+		auto Weapon_Array = MyCharacter->Weapons;
+		for (auto i:Weapon_Array)
+		{
+			if (Cast<AGun_Pistol>(i))
+			{
+				MyCharacter->CurrentWeapon = i;
+				break;
+			}
+		}
+		
+	}*/
+		
 }
