@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "BanSungOFFLINE_CPlus",
+			"Path": "..\\Source\\BanSungOFFLINE_CPlus.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "BanSungOFFLINE_CPlusEditor",
+			"Path": "..\\Source\\BanSungOFFLINE_CPlusEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

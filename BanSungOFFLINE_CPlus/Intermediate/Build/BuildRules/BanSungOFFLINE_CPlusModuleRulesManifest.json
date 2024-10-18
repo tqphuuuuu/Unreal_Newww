@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"C:\\Users\\OS\\Documents\\Unreal Projects\\BanSungOFFLINE_CPlus\\Source\\BanSungOFFLINE_CPlus\\BanSungOFFLINE_CPlus.Build.cs",
+		"C:\\Users\\OS\\Documents\\Unreal Projects\\BanSungOFFLINE_CPlus\\Source\\BanSungOFFLINE_CPlus.Target.cs",
+		"C:\\Users\\OS\\Documents\\Unreal Projects\\BanSungOFFLINE_CPlus\\Source\\BanSungOFFLINE_CPlusEditor.Target.cs"
+	],
+	"EngineVersion": "5.4.4"
+}
