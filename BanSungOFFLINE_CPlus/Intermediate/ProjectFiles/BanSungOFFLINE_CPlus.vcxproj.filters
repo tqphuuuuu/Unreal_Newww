@@ -11,6 +11,8 @@
     <None Include="..\..\Source\BanSungOFFLINE_CPlusEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.vsconfig" />
+    <None Include="..\..\BanSungOFFLINE_CPlus.sln.DotSettings.user" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -58,6 +60,48 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\BanSungOFFLINE_CPlus\BanSungOFFLINE_CPlusPlayerController.h">
       <Filter>Source\BanSungOFFLINE_CPlus</Filter>
+    </ClInclude>
+    <Filter Include="Source\BanSungOFFLINE_CPlus\Projectiles">
+      <UniqueIdentifier>{01098432-E366-3917-A4ED-A17825F64661}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\BanSungOFFLINE_CPlus\Projectiles\Projectiles.cpp">
+      <Filter>Source\BanSungOFFLINE_CPlus\Projectiles</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BanSungOFFLINE_CPlus\Projectiles\Projectiles.h">
+      <Filter>Source\BanSungOFFLINE_CPlus\Projectiles</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\BanSungOFFLINE_CPlus\Projectiles\Projectiles_Pistol.cpp">
+      <Filter>Source\BanSungOFFLINE_CPlus\Projectiles</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BanSungOFFLINE_CPlus\Projectiles\Projectiles_Pistol.h">
+      <Filter>Source\BanSungOFFLINE_CPlus\Projectiles</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\BanSungOFFLINE_CPlus\Projectiles\Projectiles_Rifle.cpp">
+      <Filter>Source\BanSungOFFLINE_CPlus\Projectiles</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BanSungOFFLINE_CPlus\Projectiles\Projectiles_Rifle.h">
+      <Filter>Source\BanSungOFFLINE_CPlus\Projectiles</Filter>
+    </ClInclude>
+    <Filter Include="Source\BanSungOFFLINE_CPlus\Weapon">
+      <UniqueIdentifier>{4D5A55B5-47E6-3155-97C3-63E802CDD2B1}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\BanSungOFFLINE_CPlus\Weapon\Weapon.cpp">
+      <Filter>Source\BanSungOFFLINE_CPlus\Weapon</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BanSungOFFLINE_CPlus\Weapon\Weapon.h">
+      <Filter>Source\BanSungOFFLINE_CPlus\Weapon</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\BanSungOFFLINE_CPlus\Weapon\Weapon_Pistol.cpp">
+      <Filter>Source\BanSungOFFLINE_CPlus\Weapon</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BanSungOFFLINE_CPlus\Weapon\Weapon_Pistol.h">
+      <Filter>Source\BanSungOFFLINE_CPlus\Weapon</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\BanSungOFFLINE_CPlus\Weapon\Weapon_Rifle.cpp">
+      <Filter>Source\BanSungOFFLINE_CPlus\Weapon</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BanSungOFFLINE_CPlus\Weapon\Weapon_Rifle.h">
+      <Filter>Source\BanSungOFFLINE_CPlus\Weapon</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

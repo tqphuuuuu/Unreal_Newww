@@ -21,8 +21,8 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Coli")
 	class USphereComponent* SphereComponent;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Movement")
-	class UProjectileMovementComponent* ProjectileMovement;
+	FVector Velocity = {0.f,0.f,0.f};
+	
 
 protected:
 	// Called when the game starts or when spawned

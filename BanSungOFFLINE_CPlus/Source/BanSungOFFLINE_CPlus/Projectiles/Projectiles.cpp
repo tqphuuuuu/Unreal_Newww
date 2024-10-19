@@ -3,8 +3,10 @@
 
 #include "Projectiles.h"
 
+#include "BanSungOFFLINE_CPlus/BanSungOFFLINE_CPlusCharacter.h"
 #include "Components/SphereComponent.h"
 #include "GameFramework/ProjectileMovementComponent.h"
+#include "Kismet/GameplayStatics.h"
 
 
 // Sets default values
@@ -20,11 +22,7 @@ AProjectiles::AProjectiles()
 	Projectiles = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Gun_Pistol"));
 	Projectiles->SetupAttachment(SphereComponent);
 
-	ProjectileMovement = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("ProjectileMovement"));
-
-	ProjectileMovement->InitialSpeed = 3000.0f;  // Tốc độ ban đầu
-	ProjectileMovement->MaxSpeed = 3000.0f;      // Tốc độ tối đa
-
+	
 	
 }
 
@@ -39,5 +37,15 @@ void AProjectiles::BeginPlay()
 void AProjectiles::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+	Velocity.Z=0.f;
+	SetActorLocation(GetActorLocation() + Velocity);
+	
+	TArray<AActor*> FoundActors;
+	UGameplayStatics::GetAllActorsOfClass(GetWorld(), ABanSungOFFLINE_CPlusCharacter::StaticClass(), FoundActors);
+	if ((FoundActors[0]->GetActorLocation() - GetActorLocation()).SquaredLength() > 1000000007)
+	{
+		Destroy();
+	}
 }
 

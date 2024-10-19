@@ -1,8 +1,8 @@
 {
 	"SourceFiles": [
-		"E:\\Unreal_Newww\\BanSungOFFLINE_CPlus\\Source\\BanSungOFFLINE_CPlus\\BanSungOFFLINE_CPlus.Build.cs",
-		"E:\\Unreal_Newww\\BanSungOFFLINE_CPlus\\Source\\BanSungOFFLINE_CPlus.Target.cs",
-		"E:\\Unreal_Newww\\BanSungOFFLINE_CPlus\\Source\\BanSungOFFLINE_CPlusEditor.Target.cs"
+		"C:\\Users\\TQPhuuuuu\\Desktop\\GitHubNew\\Unreal_Newww\\BanSungOFFLINE_CPlus\\Source\\BanSungOFFLINE_CPlus\\BanSungOFFLINE_CPlus.Build.cs",
+		"C:\\Users\\TQPhuuuuu\\Desktop\\GitHubNew\\Unreal_Newww\\BanSungOFFLINE_CPlus\\Source\\BanSungOFFLINE_CPlus.Target.cs",
+		"C:\\Users\\TQPhuuuuu\\Desktop\\GitHubNew\\Unreal_Newww\\BanSungOFFLINE_CPlus\\Source\\BanSungOFFLINE_CPlusEditor.Target.cs"
 	],
 	"EngineVersion": "5.4.4"
 }

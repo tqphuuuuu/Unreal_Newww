@@ -38,7 +38,7 @@ void AWeapon::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 }
 
-void AWeapon::Fire()
+void AWeapon::Fire(FVector& JerryPosition)
 {
 	
 	UKismetSystemLibrary::PrintString(this,"Da Click");
@@ -53,7 +53,10 @@ void AWeapon::Fire()
 		FTransform x = GunMesh->GetSocketTransform("Socket_Point");
 		UKismetSystemLibrary::PrintString(this, x.GetLocation().ToString());
 
-		GetWorld()->SpawnActor<AProjectiles_Pistol>(Projectile_Pistol, x);
+		AProjectiles_Pistol* Jerry = GetWorld()->SpawnActor<AProjectiles_Pistol>(Projectile_Pistol, x);
+		FVector Temp = (JerryPosition - GetActorLocation());
+		Temp.Normalize();
+		Jerry->Velocity = Temp * SpeedAmmo;
 	}
 	else if (Type == 1)  // Type 1 là Rifle
 	{
@@ -63,7 +66,11 @@ void AWeapon::Fire()
 		FTransform x = GunMesh->GetSocketTransform("Socket_Point");
 		UKismetSystemLibrary::PrintString(this, x.GetLocation().ToString());
 
-		GetWorld()->SpawnActor<AProjectiles_Rifle>(Projectile_Rifle, x);
+		AProjectiles_Rifle* Jerry = GetWorld()->SpawnActor<AProjectiles_Rifle>(Projectile_Rifle, x);
+		FVector Temp = (JerryPosition - GetActorLocation());
+		Temp.Normalize();
+		Jerry->Velocity = Temp * SpeedAmmo;
+
 	}
 
 	// Trừ đạn sau khi bắn

@@ -17,6 +17,7 @@ AWeapon_Pistol::AWeapon_Pistol()
 	CurrentAmmo = 15;
 	MaxAmmo = 15;
 	Type = 0;
+	SpeedAmmo = 50;
 }
 
 // Called when the game starts or when spawned

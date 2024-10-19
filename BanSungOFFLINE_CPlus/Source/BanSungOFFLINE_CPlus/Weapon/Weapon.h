@@ -64,5 +64,5 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Gun Properties")
 	int Type;
 
-	virtual void Fire();
+	virtual void Fire(FVector& JerryPosition);
 };

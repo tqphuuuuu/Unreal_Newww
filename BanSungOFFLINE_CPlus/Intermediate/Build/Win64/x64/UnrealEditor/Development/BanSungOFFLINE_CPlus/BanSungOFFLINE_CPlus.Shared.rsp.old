@@ -1,6 +1,6 @@
 /I "."
-/I "C:\Users\OS\Documents\Unreal Projects\BanSungOFFLINE_CPlus\Intermediate\Build\Win64\UnrealEditor\Inc\BanSungOFFLINE_CPlus\UHT"
-/I "C:\Users\OS\Documents\Unreal Projects\BanSungOFFLINE_CPlus\Source"
+/I "E:\Unreal_Newww\BanSungOFFLINE_CPlus\Intermediate\Build\Win64\UnrealEditor\Inc\BanSungOFFLINE_CPlus\UHT"
+/I "E:\Unreal_Newww\BanSungOFFLINE_CPlus\Source"
 /I "Runtime\Core\Public"
 /I "Runtime\Core\Internal"
 /I "Runtime\TraceLog\Public"

@@ -13,7 +13,6 @@ void EmptyLinkFunctionForGeneratedCodeProjectiles() {}
 BANSUNGOFFLINE_CPLUS_API UClass* Z_Construct_UClass_AProjectiles();
 BANSUNGOFFLINE_CPLUS_API UClass* Z_Construct_UClass_AProjectiles_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_AActor();
-ENGINE_API UClass* Z_Construct_UClass_UProjectileMovementComponent_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_USphereComponent_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 UPackage* Z_Construct_UPackage__Script_BanSungOFFLINE_CPlus();
@@ -45,15 +44,9 @@ struct Z_Construct_UClass_AProjectiles_Statics
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Projectiles/Projectiles.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ProjectileMovement_MetaData[] = {
-		{ "Category", "Movement" },
-		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "Projectiles/Projectiles.h" },
-	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_Projectiles;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_SphereComponent;
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_ProjectileMovement;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -63,11 +56,9 @@ struct Z_Construct_UClass_AProjectiles_Statics
 };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AProjectiles_Statics::NewProp_Projectiles = { "Projectiles", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AProjectiles, Projectiles), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Projectiles_MetaData), NewProp_Projectiles_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AProjectiles_Statics::NewProp_SphereComponent = { "SphereComponent", nullptr, (EPropertyFlags)0x00100000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AProjectiles, SphereComponent), Z_Construct_UClass_USphereComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SphereComponent_MetaData), NewProp_SphereComponent_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AProjectiles_Statics::NewProp_ProjectileMovement = { "ProjectileMovement", nullptr, (EPropertyFlags)0x00100000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AProjectiles, ProjectileMovement), Z_Construct_UClass_UProjectileMovementComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ProjectileMovement_MetaData), NewProp_ProjectileMovement_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AProjectiles_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AProjectiles_Statics::NewProp_Projectiles,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AProjectiles_Statics::NewProp_SphereComponent,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AProjectiles_Statics::NewProp_ProjectileMovement,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AProjectiles_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_AProjectiles_Statics::DependentSingletons[])() = {
@@ -107,14 +98,14 @@ AProjectiles::~AProjectiles() {}
 // End Class AProjectiles
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_Projectiles_Projectiles_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_TQPhuuuuu_Desktop_GitHubNew_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_Projectiles_Projectiles_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AProjectiles, AProjectiles::StaticClass, TEXT("AProjectiles"), &Z_Registration_Info_UClass_AProjectiles, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AProjectiles), 804708906U) },
+		{ Z_Construct_UClass_AProjectiles, AProjectiles::StaticClass, TEXT("AProjectiles"), &Z_Registration_Info_UClass_AProjectiles, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AProjectiles), 2514467019U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_Projectiles_Projectiles_h_1663417982(TEXT("/Script/BanSungOFFLINE_CPlus"),
-	Z_CompiledInDeferFile_FID_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_Projectiles_Projectiles_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_Projectiles_Projectiles_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_TQPhuuuuu_Desktop_GitHubNew_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_Projectiles_Projectiles_h_889723978(TEXT("/Script/BanSungOFFLINE_CPlus"),
+	Z_CompiledInDeferFile_FID_Users_TQPhuuuuu_Desktop_GitHubNew_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_Projectiles_Projectiles_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_TQPhuuuuu_Desktop_GitHubNew_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_Projectiles_Projectiles_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

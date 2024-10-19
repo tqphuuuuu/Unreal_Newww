@@ -140,7 +140,7 @@ void ABanSungOFFLINE_CPlusPlayerController::OnSetDestinationTriggered()
 		{
 			if (SelectedWeapon->CurrentAmmo >= 1)
 			{
-				Cast<AWeapon>(MyCharacter->CurrentWeapon)->Fire();
+				Cast<AWeapon>(MyCharacter->CurrentWeapon)->Fire(CachedDestination);
 			}
 		}
 	
@@ -222,7 +222,7 @@ void ABanSungOFFLINE_CPlusPlayerController::OnKeyBoard_Pistol(const FInputAction
 	{
 		MyCharacter->ShowWeapon(0);
 		ShowWBCountBullet.Broadcast();
-		MyCharacter->Cur_weapon = 1;
+		MyCharacter->Cur_weapon = 0;
 		auto Weapon_Array = MyCharacter->Weapons;
 		for (auto i:Weapon_Array)
 		{
