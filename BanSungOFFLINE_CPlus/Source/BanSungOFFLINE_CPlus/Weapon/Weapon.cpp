@@ -4,6 +4,7 @@
 #include "Weapon.h"
 
 #include "BanSungOFFLINE_CPlus/BanSungOFFLINE_CPlusCharacter.h"
+#include "BanSungOFFLINE_CPlus/BanSungOFFLINE_CPlusPlayerController.h"
 #include "Components/SphereComponent.h"
 #include "Kismet/KismetSystemLibrary.h"
 
@@ -38,6 +39,8 @@ void AWeapon::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 }
 
+FTimerHandle TimerHandle_SpawnRifle;
+
 void AWeapon::Fire(FVector& JerryPosition)
 {
 	
@@ -58,8 +61,19 @@ void AWeapon::Fire(FVector& JerryPosition)
 		Temp.Normalize();
 		Jerry->Velocity = Temp * SpeedAmmo;
 	}
-	else if (Type == 1)  // Type 1 là Rifle
+	
+
+	// Trừ đạn sau khi bắn
+	CurrentAmmo--;
+
+}
+
+void AWeapon::FireShooting(FVector& JerryPosition)
+{
+	if (Type == 1)
 	{
+		ABanSungOFFLINE_CPlusPlayerController* MyController = Cast<ABanSungOFFLINE_CPlusPlayerController>(GetOwner());
+	
 		// Thực hiện bắn đạn Rifle
 		UKismetSystemLibrary::PrintString(this,"Xem có chạy không1");
 
@@ -71,10 +85,8 @@ void AWeapon::Fire(FVector& JerryPosition)
 		Temp.Normalize();
 		Jerry->Velocity = Temp * SpeedAmmo;
 
+		CurrentAmmo--;
 	}
-
-	// Trừ đạn sau khi bắn
-	CurrentAmmo--;
-
+	
 }
 

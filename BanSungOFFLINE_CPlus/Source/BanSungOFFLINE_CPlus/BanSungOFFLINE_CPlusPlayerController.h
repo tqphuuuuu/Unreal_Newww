@@ -65,6 +65,9 @@ public:
 	//UI AMmo
 	UPROPERTY(BlueprintAssignable)
 	FDisplayWBBulletCount ShowWBCountBullet;
+
+	
+	void OnShooting();
 	
 protected:
 	/** True if the controlled character should navigate to the mouse cursor. */
@@ -93,7 +96,7 @@ protected:
 
 
 	bool bIsShooting = false; //  biến để theo dõi trạng thái bấm chuột
-
+	
 
 
 private:
@@ -101,7 +104,10 @@ private:
 
 	bool bIsTouch; // Is it a touch device
 	float FollowTime; // For how long it has been pressed
-	
+public:
+	bool FireShooting = false;
+	FVector DirectionMouse;
+
 	
 };
 

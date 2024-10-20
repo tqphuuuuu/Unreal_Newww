@@ -42,7 +42,7 @@ void ABanSungOFFLINE_CPlusPlayerController::Tick(float DeltaSeconds)
 	///////////////// Nhìn theo hướng chuột///////////////////////////
 	if (bHitSuccessful)
 	{	
-		FVector DirectionMouse = HitResult.Location;
+		DirectionMouse = HitResult.Location;
 		FVector start = GetPawn()->GetActorLocation();
 		start.Z = 0.f;
 		DirectionMouse.Z = 0.f;
@@ -68,6 +68,9 @@ void ABanSungOFFLINE_CPlusPlayerController::SetupInputComponent()
 		// Setup mouse input events
 		EnhancedInputComponent->BindAction(SetDestinationClickAction, ETriggerEvent::Started, this, &ABanSungOFFLINE_CPlusPlayerController::OnSetDestinationTriggered);
 		EnhancedInputComponent->BindAction(SetDestinationClickAction, ETriggerEvent::Completed, this, &ABanSungOFFLINE_CPlusPlayerController::OnMouseReleased);
+
+		EnhancedInputComponent->BindAction(SetDestinationClickAction, ETriggerEvent::Triggered, this, &ABanSungOFFLINE_CPlusPlayerController::OnShooting);
+
 
 		InputComponent->BindAction("Mouse Click", IE_Released, this, &ABanSungOFFLINE_CPlusPlayerController::OnMouseButtonReleased);
 	
@@ -138,10 +141,31 @@ void ABanSungOFFLINE_CPlusPlayerController::OnSetDestinationTriggered()
 		// Nếu tìm thấy súng hiện tại
 		if (SelectedWeapon)
 		{
+			FString WeaponName = SelectedWeapon->GetName(); // Hoặc một thuộc tính khác mà bạn muốn
+			UKismetSystemLibrary::PrintString(this, FString::Printf(TEXT("Selected Weapon: %s"), *WeaponName));
+
 			if (SelectedWeapon->CurrentAmmo >= 1)
 			{
-				Cast<AWeapon>(MyCharacter->CurrentWeapon)->Fire(CachedDestination);
+				if (SelectedWeapon -> Type == 1)
+				{
+					OnShooting();
+					FireShooting = true;
+					UKismetSystemLibrary::PrintString(this, "Da goi toi FireShooting");
+
+
+				}
+				else if (SelectedWeapon ->Type == 0 )
+				{
+					Cast<AWeapon>(MyCharacter->CurrentWeapon)->Fire(CachedDestination);
+					UKismetSystemLibrary::PrintString(this, "Da goi toi Fire");
+				}
+				
 			}
+			else
+			{
+				FireShooting = false;
+			}
+			
 		}
 	
 
@@ -154,6 +178,21 @@ void ABanSungOFFLINE_CPlusPlayerController::OnSetDestinationTriggered()
 		ControlledPawn->AddMovementInput(WorldDirection, 1.0, false);
 	}
 }
+
+
+//// Hàm bắn liên thanh////////////////////////////////
+
+void ABanSungOFFLINE_CPlusPlayerController::OnShooting()
+{
+	if (FireShooting)
+	{
+		ABanSungOFFLINE_CPlusCharacter* MyCharacter = Cast<ABanSungOFFLINE_CPlusCharacter>(GetPawn());
+		Cast<AWeapon>(MyCharacter->CurrentWeapon)->FireShooting(DirectionMouse);
+
+	}
+}
+
+
 
 void ABanSungOFFLINE_CPlusPlayerController::OnSetDestinationReleased()
 {
@@ -209,6 +248,8 @@ void ABanSungOFFLINE_CPlusPlayerController::OnMouseReleased()
 void ABanSungOFFLINE_CPlusPlayerController::OnMouseButtonReleased()
 {
 	// Code xử lý khi nút chuột được thả
+	bIsShooting = false;
+
 }
 void ABanSungOFFLINE_CPlusPlayerController::OnKeyBoard_Pistol(const FInputActionValue& Value)
 {
@@ -272,13 +313,13 @@ void ABanSungOFFLINE_CPlusPlayerController::OnKeyBoard_ReloadAmmo(const FInputAc
 	UKismetSystemLibrary::PrintString(this,"Phim R");
 	
 
-	/*ABanSungOFFLINE_CCharacter* MyCharacter = Cast<ABanSungOFFLINE_CCharacter>(GetCharacter());
+	/*ABanSungOFFLINE_CPlusCharacter* MyCharacter = Cast<ABanSungOFFLINE_CPlusCharacter>(GetCharacter());
 	
-	/*if (MyCharacter)
+	if (MyCharacter)
 	{
 		MyCharacter->ShowPistol();
 		
-	}#1#
+	}
 
 	if (MyCharacter)
 	{
