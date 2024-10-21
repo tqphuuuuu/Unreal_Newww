@@ -116,6 +116,10 @@ struct Z_Construct_UClass_ABanSungOFFLINE_CPlusCharacter_Statics
 		{ "Category", "Weapon" },
 		{ "ModuleRelativePath", "BanSungOFFLINE_CPlusCharacter.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CurrentHealth_MetaData[] = {
+		{ "Category", "Weapon" },
+		{ "ModuleRelativePath", "BanSungOFFLINE_CPlusCharacter.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_TopDownCameraComponent_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Camera" },
@@ -143,6 +147,7 @@ struct Z_Construct_UClass_ABanSungOFFLINE_CPlusCharacter_Statics
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FIntPropertyParams NewProp_Cur_weapon;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_CurrentWeapon;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_CurrentHealth;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_TopDownCameraComponent;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_CameraBoom;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
@@ -158,11 +163,13 @@ struct Z_Construct_UClass_ABanSungOFFLINE_CPlusCharacter_Statics
 };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_ABanSungOFFLINE_CPlusCharacter_Statics::NewProp_Cur_weapon = { "Cur_weapon", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABanSungOFFLINE_CPlusCharacter, Cur_weapon), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Cur_weapon_MetaData), NewProp_Cur_weapon_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABanSungOFFLINE_CPlusCharacter_Statics::NewProp_CurrentWeapon = { "CurrentWeapon", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABanSungOFFLINE_CPlusCharacter, CurrentWeapon), Z_Construct_UClass_AWeapon_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentWeapon_MetaData), NewProp_CurrentWeapon_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ABanSungOFFLINE_CPlusCharacter_Statics::NewProp_CurrentHealth = { "CurrentHealth", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABanSungOFFLINE_CPlusCharacter, CurrentHealth), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentHealth_MetaData), NewProp_CurrentHealth_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABanSungOFFLINE_CPlusCharacter_Statics::NewProp_TopDownCameraComponent = { "TopDownCameraComponent", nullptr, (EPropertyFlags)0x00400000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABanSungOFFLINE_CPlusCharacter, TopDownCameraComponent), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TopDownCameraComponent_MetaData), NewProp_TopDownCameraComponent_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABanSungOFFLINE_CPlusCharacter_Statics::NewProp_CameraBoom = { "CameraBoom", nullptr, (EPropertyFlags)0x00400000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABanSungOFFLINE_CPlusCharacter, CameraBoom), Z_Construct_UClass_USpringArmComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CameraBoom_MetaData), NewProp_CameraBoom_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ABanSungOFFLINE_CPlusCharacter_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABanSungOFFLINE_CPlusCharacter_Statics::NewProp_Cur_weapon,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABanSungOFFLINE_CPlusCharacter_Statics::NewProp_CurrentWeapon,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABanSungOFFLINE_CPlusCharacter_Statics::NewProp_CurrentHealth,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABanSungOFFLINE_CPlusCharacter_Statics::NewProp_TopDownCameraComponent,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABanSungOFFLINE_CPlusCharacter_Statics::NewProp_CameraBoom,
 };
@@ -204,14 +211,14 @@ ABanSungOFFLINE_CPlusCharacter::~ABanSungOFFLINE_CPlusCharacter() {}
 // End Class ABanSungOFFLINE_CPlusCharacter
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_BanSungOFFLINE_CPlusCharacter_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_TQPhuuuuu_Desktop_GitHubNew_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_BanSungOFFLINE_CPlusCharacter_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ABanSungOFFLINE_CPlusCharacter, ABanSungOFFLINE_CPlusCharacter::StaticClass, TEXT("ABanSungOFFLINE_CPlusCharacter"), &Z_Registration_Info_UClass_ABanSungOFFLINE_CPlusCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABanSungOFFLINE_CPlusCharacter), 2717132551U) },
+		{ Z_Construct_UClass_ABanSungOFFLINE_CPlusCharacter, ABanSungOFFLINE_CPlusCharacter::StaticClass, TEXT("ABanSungOFFLINE_CPlusCharacter"), &Z_Registration_Info_UClass_ABanSungOFFLINE_CPlusCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABanSungOFFLINE_CPlusCharacter), 3743092048U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_BanSungOFFLINE_CPlusCharacter_h_5592316(TEXT("/Script/BanSungOFFLINE_CPlus"),
-	Z_CompiledInDeferFile_FID_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_BanSungOFFLINE_CPlusCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_BanSungOFFLINE_CPlusCharacter_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_TQPhuuuuu_Desktop_GitHubNew_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_BanSungOFFLINE_CPlusCharacter_h_2619064973(TEXT("/Script/BanSungOFFLINE_CPlus"),
+	Z_CompiledInDeferFile_FID_Users_TQPhuuuuu_Desktop_GitHubNew_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_BanSungOFFLINE_CPlusCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_TQPhuuuuu_Desktop_GitHubNew_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_BanSungOFFLINE_CPlusCharacter_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

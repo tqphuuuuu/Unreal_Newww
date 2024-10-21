@@ -7,6 +7,7 @@
 #include "Weapon/Weapon.h"
 #include "BanSungOFFLINE_CPlusCharacter.generated.h"
 
+
 UCLASS(Blueprintable)
 class ABanSungOFFLINE_CPlusCharacter : public ACharacter
 {
@@ -43,10 +44,17 @@ public:
 	UPROPERTY(EditAnywhere,BlueprintReadOnly,Category="Weapon");
 	AWeapon* CurrentWeapon;
 
+	UPROPERTY(EditAnywhere,BlueprintReadOnly,Category="Weapon");
+	float CurrentHealth;
+
+	
+	
+	
 	//Kiểm tra hiển thị của súng
 	UFUNCTION(BlueprintCallable, Category = "Weapon")
 	bool IsWeaponVisible(TSubclassOf<AWeapon> WeaponClass);
 
+	TSubclassOf<AWeapon> GetCurrentWeaponClass();
 
 
 private:

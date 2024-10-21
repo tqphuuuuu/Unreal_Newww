@@ -14,6 +14,7 @@ BANSUNGOFFLINE_CPLUS_API UClass* Z_Construct_UClass_ABanSungOFFLINE_CPlusPlayerC
 BANSUNGOFFLINE_CPLUS_API UClass* Z_Construct_UClass_ABanSungOFFLINE_CPlusPlayerController_NoRegister();
 BANSUNGOFFLINE_CPLUS_API UFunction* Z_Construct_UDelegateFunction_BanSungOFFLINE_CPlus_BulletCount__DelegateSignature();
 BANSUNGOFFLINE_CPLUS_API UFunction* Z_Construct_UDelegateFunction_BanSungOFFLINE_CPlus_DisplayWBBulletCount__DelegateSignature();
+BANSUNGOFFLINE_CPLUS_API UFunction* Z_Construct_UDelegateFunction_BanSungOFFLINE_CPlus_MaxHealth__DelegateSignature();
 ENGINE_API UClass* Z_Construct_UClass_APlayerController();
 ENHANCEDINPUT_API UClass* Z_Construct_UClass_UInputAction_NoRegister();
 ENHANCEDINPUT_API UClass* Z_Construct_UClass_UInputMappingContext_NoRegister();
@@ -72,6 +73,32 @@ void FDisplayWBBulletCount_DelegateWrapper(const FMulticastScriptDelegate& Displ
 	DisplayWBBulletCount.ProcessMulticastDelegate<UObject>(NULL);
 }
 // End Delegate FDisplayWBBulletCount
+
+// Begin Delegate FMaxHealth
+struct Z_Construct_UDelegateFunction_BanSungOFFLINE_CPlus_MaxHealth__DelegateSignature_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "BanSungOFFLINE_CPlusPlayerController.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_BanSungOFFLINE_CPlus_MaxHealth__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UPackage__Script_BanSungOFFLINE_CPlus, nullptr, "MaxHealth__DelegateSignature", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_BanSungOFFLINE_CPlus_MaxHealth__DelegateSignature_Statics::Function_MetaDataParams), Z_Construct_UDelegateFunction_BanSungOFFLINE_CPlus_MaxHealth__DelegateSignature_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UDelegateFunction_BanSungOFFLINE_CPlus_MaxHealth__DelegateSignature()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UDelegateFunction_BanSungOFFLINE_CPlus_MaxHealth__DelegateSignature_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+void FMaxHealth_DelegateWrapper(const FMulticastScriptDelegate& MaxHealth)
+{
+	MaxHealth.ProcessMulticastDelegate<UObject>(NULL);
+}
+// End Delegate FMaxHealth
 
 // Begin Class ABanSungOFFLINE_CPlusPlayerController
 void ABanSungOFFLINE_CPlusPlayerController::StaticRegisterNativesABanSungOFFLINE_CPlusPlayerController()
@@ -184,6 +211,17 @@ struct Z_Construct_UClass_ABanSungOFFLINE_CPlusPlayerController_Statics
 		{ "ToolTip", "UI AMmo" },
 #endif
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ShowHealth_MetaData[] = {
+		{ "ModuleRelativePath", "BanSungOFFLINE_CPlusPlayerController.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Health_MetaData[] = {
+		{ "Category", "Health" },
+		{ "ModuleRelativePath", "BanSungOFFLINE_CPlusPlayerController.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MaxHealth_MetaData[] = {
+		{ "Category", "Max Health" },
+		{ "ModuleRelativePath", "BanSungOFFLINE_CPlusPlayerController.h" },
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_ShortPressThreshold;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_FXCursor;
@@ -195,6 +233,9 @@ struct Z_Construct_UClass_ABanSungOFFLINE_CPlusPlayerController_Statics
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_Key_BoardRifle;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_keyBoardReloadAmmo;
 	static const UECodeGen_Private::FMulticastDelegatePropertyParams NewProp_ShowWBCountBullet;
+	static const UECodeGen_Private::FMulticastDelegatePropertyParams NewProp_ShowHealth;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_Health;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_MaxHealth;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -212,6 +253,9 @@ const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABanSungOFFLIN
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABanSungOFFLINE_CPlusPlayerController_Statics::NewProp_Key_BoardRifle = { "Key_BoardRifle", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABanSungOFFLINE_CPlusPlayerController, Key_BoardRifle), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Key_BoardRifle_MetaData), NewProp_Key_BoardRifle_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABanSungOFFLINE_CPlusPlayerController_Statics::NewProp_keyBoardReloadAmmo = { "keyBoardReloadAmmo", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABanSungOFFLINE_CPlusPlayerController, keyBoardReloadAmmo), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_keyBoardReloadAmmo_MetaData), NewProp_keyBoardReloadAmmo_MetaData) };
 const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_ABanSungOFFLINE_CPlusPlayerController_Statics::NewProp_ShowWBCountBullet = { "ShowWBCountBullet", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABanSungOFFLINE_CPlusPlayerController, ShowWBCountBullet), Z_Construct_UDelegateFunction_BanSungOFFLINE_CPlus_DisplayWBBulletCount__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ShowWBCountBullet_MetaData), NewProp_ShowWBCountBullet_MetaData) }; // 3263466961
+const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_ABanSungOFFLINE_CPlusPlayerController_Statics::NewProp_ShowHealth = { "ShowHealth", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABanSungOFFLINE_CPlusPlayerController, ShowHealth), Z_Construct_UDelegateFunction_BanSungOFFLINE_CPlus_MaxHealth__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ShowHealth_MetaData), NewProp_ShowHealth_MetaData) }; // 516341161
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ABanSungOFFLINE_CPlusPlayerController_Statics::NewProp_Health = { "Health", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABanSungOFFLINE_CPlusPlayerController, Health), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Health_MetaData), NewProp_Health_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ABanSungOFFLINE_CPlusPlayerController_Statics::NewProp_MaxHealth = { "MaxHealth", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABanSungOFFLINE_CPlusPlayerController, MaxHealth), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MaxHealth_MetaData), NewProp_MaxHealth_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ABanSungOFFLINE_CPlusPlayerController_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABanSungOFFLINE_CPlusPlayerController_Statics::NewProp_ShortPressThreshold,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABanSungOFFLINE_CPlusPlayerController_Statics::NewProp_FXCursor,
@@ -223,6 +267,9 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ABanSungO
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABanSungOFFLINE_CPlusPlayerController_Statics::NewProp_Key_BoardRifle,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABanSungOFFLINE_CPlusPlayerController_Statics::NewProp_keyBoardReloadAmmo,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABanSungOFFLINE_CPlusPlayerController_Statics::NewProp_ShowWBCountBullet,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABanSungOFFLINE_CPlusPlayerController_Statics::NewProp_ShowHealth,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABanSungOFFLINE_CPlusPlayerController_Statics::NewProp_Health,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABanSungOFFLINE_CPlusPlayerController_Statics::NewProp_MaxHealth,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ABanSungOFFLINE_CPlusPlayerController_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_ABanSungOFFLINE_CPlusPlayerController_Statics::DependentSingletons[])() = {
@@ -262,14 +309,14 @@ ABanSungOFFLINE_CPlusPlayerController::~ABanSungOFFLINE_CPlusPlayerController() 
 // End Class ABanSungOFFLINE_CPlusPlayerController
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_BanSungOFFLINE_CPlusPlayerController_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_TQPhuuuuu_Desktop_GitHubNew_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_BanSungOFFLINE_CPlusPlayerController_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ABanSungOFFLINE_CPlusPlayerController, ABanSungOFFLINE_CPlusPlayerController::StaticClass, TEXT("ABanSungOFFLINE_CPlusPlayerController"), &Z_Registration_Info_UClass_ABanSungOFFLINE_CPlusPlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABanSungOFFLINE_CPlusPlayerController), 1008186104U) },
+		{ Z_Construct_UClass_ABanSungOFFLINE_CPlusPlayerController, ABanSungOFFLINE_CPlusPlayerController::StaticClass, TEXT("ABanSungOFFLINE_CPlusPlayerController"), &Z_Registration_Info_UClass_ABanSungOFFLINE_CPlusPlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABanSungOFFLINE_CPlusPlayerController), 3995968492U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_BanSungOFFLINE_CPlusPlayerController_h_2198501198(TEXT("/Script/BanSungOFFLINE_CPlus"),
-	Z_CompiledInDeferFile_FID_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_BanSungOFFLINE_CPlusPlayerController_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_BanSungOFFLINE_CPlusPlayerController_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_TQPhuuuuu_Desktop_GitHubNew_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_BanSungOFFLINE_CPlusPlayerController_h_2762645932(TEXT("/Script/BanSungOFFLINE_CPlus"),
+	Z_CompiledInDeferFile_FID_Users_TQPhuuuuu_Desktop_GitHubNew_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_BanSungOFFLINE_CPlusPlayerController_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_TQPhuuuuu_Desktop_GitHubNew_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_BanSungOFFLINE_CPlusPlayerController_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

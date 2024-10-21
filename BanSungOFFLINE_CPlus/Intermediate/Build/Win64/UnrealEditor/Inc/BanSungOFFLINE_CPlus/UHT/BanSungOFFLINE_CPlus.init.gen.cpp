@@ -9,6 +9,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeBanSungOFFLINE_CPlus_init() {}
 	BANSUNGOFFLINE_CPLUS_API UFunction* Z_Construct_UDelegateFunction_BanSungOFFLINE_CPlus_BulletCount__DelegateSignature();
 	BANSUNGOFFLINE_CPLUS_API UFunction* Z_Construct_UDelegateFunction_BanSungOFFLINE_CPlus_DisplayWBBulletCount__DelegateSignature();
+	BANSUNGOFFLINE_CPLUS_API UFunction* Z_Construct_UDelegateFunction_BanSungOFFLINE_CPlus_MaxHealth__DelegateSignature();
 	static FPackageRegistrationInfo Z_Registration_Info_UPackage__Script_BanSungOFFLINE_CPlus;
 	FORCENOINLINE UPackage* Z_Construct_UPackage__Script_BanSungOFFLINE_CPlus()
 	{
@@ -17,19 +18,20 @@ void EmptyLinkFunctionForGeneratedCodeBanSungOFFLINE_CPlus_init() {}
 			static UObject* (*const SingletonFuncArray[])() = {
 				(UObject* (*)())Z_Construct_UDelegateFunction_BanSungOFFLINE_CPlus_BulletCount__DelegateSignature,
 				(UObject* (*)())Z_Construct_UDelegateFunction_BanSungOFFLINE_CPlus_DisplayWBBulletCount__DelegateSignature,
+				(UObject* (*)())Z_Construct_UDelegateFunction_BanSungOFFLINE_CPlus_MaxHealth__DelegateSignature,
 			};
 			static const UECodeGen_Private::FPackageParams PackageParams = {
 				"/Script/BanSungOFFLINE_CPlus",
 				SingletonFuncArray,
 				UE_ARRAY_COUNT(SingletonFuncArray),
 				PKG_CompiledIn | 0x00000000,
-				0x90AC417D,
-				0x35EEDFCB,
+				0xF65B2119,
+				0xA3B2CC14,
 				METADATA_PARAMS(0, nullptr)
 			};
 			UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_BanSungOFFLINE_CPlus.OuterSingleton, PackageParams);
 		}
 		return Z_Registration_Info_UPackage__Script_BanSungOFFLINE_CPlus.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_BanSungOFFLINE_CPlus(Z_Construct_UPackage__Script_BanSungOFFLINE_CPlus, TEXT("/Script/BanSungOFFLINE_CPlus"), Z_Registration_Info_UPackage__Script_BanSungOFFLINE_CPlus, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x90AC417D, 0x35EEDFCB));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_BanSungOFFLINE_CPlus(Z_Construct_UPackage__Script_BanSungOFFLINE_CPlus, TEXT("/Script/BanSungOFFLINE_CPlus"), Z_Registration_Info_UPackage__Script_BanSungOFFLINE_CPlus, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xF65B2119, 0xA3B2CC14));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

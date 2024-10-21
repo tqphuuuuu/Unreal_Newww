@@ -14,7 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define BANSUNGOFFLINE_CPLUS_Enermy_generated_h
 
-#define FID_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_Enermy_Enermy_h_14_INCLASS_NO_PURE_DECLS \
+#define FID_Users_TQPhuuuuu_Desktop_GitHubNew_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_Enermy_Enermy_h_14_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAEnermy(); \
 	friend struct Z_Construct_UClass_AEnermy_Statics; \
@@ -23,7 +23,7 @@ public: \
 	DECLARE_SERIALIZER(AEnermy)
 
 
-#define FID_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_Enermy_Enermy_h_14_ENHANCED_CONSTRUCTORS \
+#define FID_Users_TQPhuuuuu_Desktop_GitHubNew_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_Enermy_Enermy_h_14_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AEnermy(AEnermy&&); \
@@ -35,12 +35,12 @@ public: \
 	NO_API virtual ~AEnermy();
 
 
-#define FID_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_Enermy_Enermy_h_11_PROLOG
-#define FID_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_Enermy_Enermy_h_14_GENERATED_BODY \
+#define FID_Users_TQPhuuuuu_Desktop_GitHubNew_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_Enermy_Enermy_h_11_PROLOG
+#define FID_Users_TQPhuuuuu_Desktop_GitHubNew_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_Enermy_Enermy_h_14_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_Enermy_Enermy_h_14_INCLASS_NO_PURE_DECLS \
-	FID_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_Enermy_Enermy_h_14_ENHANCED_CONSTRUCTORS \
+	FID_Users_TQPhuuuuu_Desktop_GitHubNew_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_Enermy_Enermy_h_14_INCLASS_NO_PURE_DECLS \
+	FID_Users_TQPhuuuuu_Desktop_GitHubNew_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_Enermy_Enermy_h_14_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -48,7 +48,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> BANSUNGOFFLINE_CPLUS_API UClass* StaticClass<class AEnermy>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_Enermy_Enermy_h
+#define CURRENT_FILE_ID FID_Users_TQPhuuuuu_Desktop_GitHubNew_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_Enermy_Enermy_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

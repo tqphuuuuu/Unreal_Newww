@@ -9,6 +9,7 @@ AEnermy_Boss::AEnermy_Boss()
 {
 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+	Health = 50;
 }
 
 // Called when the game starts or when spawned
@@ -22,6 +23,10 @@ void AEnermy_Boss::BeginPlay()
 void AEnermy_Boss::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	if (Health <= 0)
+	{
+		Destroy();
+	}
 }
 
 // Called to bind functionality to input

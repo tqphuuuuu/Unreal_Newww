@@ -23,6 +23,9 @@ ABanSungOFFLINE_CPlusPlayerController::ABanSungOFFLINE_CPlusPlayerController()
 	DefaultMouseCursor = EMouseCursor::Default;
 	CachedDestination = FVector::ZeroVector;
 	FollowTime = 0.f;
+
+	Health = 50 ;
+	MaxHealth = 100 ;
 }
 
 void ABanSungOFFLINE_CPlusPlayerController::BeginPlay()
@@ -66,10 +69,10 @@ void ABanSungOFFLINE_CPlusPlayerController::SetupInputComponent()
 	if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(InputComponent))
 	{
 		// Setup mouse input events
-		EnhancedInputComponent->BindAction(SetDestinationClickAction, ETriggerEvent::Started, this, &ABanSungOFFLINE_CPlusPlayerController::OnSetDestinationTriggered);
-		EnhancedInputComponent->BindAction(SetDestinationClickAction, ETriggerEvent::Completed, this, &ABanSungOFFLINE_CPlusPlayerController::OnMouseReleased);
+		EnhancedInputComponent->BindAction(SetDestinationClickAction, ETriggerEvent::Triggered, this, &ABanSungOFFLINE_CPlusPlayerController::OnSetDestinationTriggered);
+		//EnhancedInputComponent->BindAction(SetDestinationClickAction, ETriggerEvent::Completed, this, &ABanSungOFFLINE_CPlusPlayerController::OnMouseReleased);
 
-		EnhancedInputComponent->BindAction(SetDestinationClickAction, ETriggerEvent::Triggered, this, &ABanSungOFFLINE_CPlusPlayerController::OnShooting);
+		EnhancedInputComponent->BindAction(SetDestinationClickAction, ETriggerEvent::Started, this, &ABanSungOFFLINE_CPlusPlayerController::OnShooting);
 
 
 		InputComponent->BindAction("Mouse Click", IE_Released, this, &ABanSungOFFLINE_CPlusPlayerController::OnMouseButtonReleased);
@@ -142,22 +145,20 @@ void ABanSungOFFLINE_CPlusPlayerController::OnSetDestinationTriggered()
 		if (SelectedWeapon)
 		{
 			FString WeaponName = SelectedWeapon->GetName(); // Hoặc một thuộc tính khác mà bạn muốn
-			UKismetSystemLibrary::PrintString(this, FString::Printf(TEXT("Selected Weapon: %s"), *WeaponName));
+			//	UKismetSystemLibrary::PrintString(this, FString::Printf(TEXT("Selected Weapon: %s"), *WeaponName));
 
 			if (SelectedWeapon->CurrentAmmo >= 1)
 			{
 				if (SelectedWeapon -> Type == 1)
 				{
-					OnShooting();
-					FireShooting = true;
-					UKismetSystemLibrary::PrintString(this, "Da goi toi FireShooting");
-
+					Cast<AWeapon>(MyCharacter->CurrentWeapon)->Fire(DirectionMouse);
 
 				}
-				else if (SelectedWeapon ->Type == 0 )
+				else if (SelectedWeapon->Type == 0 )
 				{
-					Cast<AWeapon>(MyCharacter->CurrentWeapon)->Fire(CachedDestination);
-					UKismetSystemLibrary::PrintString(this, "Da goi toi Fire");
+					if (!ShootOneByOne)
+						Cast<AWeapon>(MyCharacter->CurrentWeapon)->Fire(CachedDestination);
+					ShootOneByOne = true;
 				}
 				
 			}
@@ -165,18 +166,7 @@ void ABanSungOFFLINE_CPlusPlayerController::OnSetDestinationTriggered()
 			{
 				FireShooting = false;
 			}
-			
 		}
-	
-
-	
-	// Move towards mouse pointer or touch
-	APawn* ControlledPawn = GetPawn();
-	if (ControlledPawn != nullptr)
-	{
-		FVector WorldDirection = (CachedDestination - ControlledPawn->GetActorLocation()).GetSafeNormal();
-		ControlledPawn->AddMovementInput(WorldDirection, 1.0, false);
-	}
 }
 
 
@@ -184,12 +174,7 @@ void ABanSungOFFLINE_CPlusPlayerController::OnSetDestinationTriggered()
 
 void ABanSungOFFLINE_CPlusPlayerController::OnShooting()
 {
-	if (FireShooting)
-	{
-		ABanSungOFFLINE_CPlusCharacter* MyCharacter = Cast<ABanSungOFFLINE_CPlusCharacter>(GetPawn());
-		Cast<AWeapon>(MyCharacter->CurrentWeapon)->FireShooting(DirectionMouse);
-
-	}
+	ShootOneByOne = false;
 }
 
 
@@ -254,9 +239,6 @@ void ABanSungOFFLINE_CPlusPlayerController::OnMouseButtonReleased()
 void ABanSungOFFLINE_CPlusPlayerController::OnKeyBoard_Pistol(const FInputActionValue& Value)
 {
 	// Log để kiểm tra xem phím bàn phím có được nhấn hay không
-	UKismetSystemLibrary::PrintString(this,"So 1");
-	
-
 	ABanSungOFFLINE_CPlusCharacter* MyCharacter = Cast<ABanSungOFFLINE_CPlusCharacter>(GetCharacter());
 	
 	if (MyCharacter)
@@ -281,8 +263,7 @@ void ABanSungOFFLINE_CPlusPlayerController::OnKeyBoard_Pistol(const FInputAction
 void ABanSungOFFLINE_CPlusPlayerController::OnKeyBoard_Rifle(const FInputActionValue& Value)
 {
 	// Log để kiểm tra xem phím bàn phím có được nhấn hay không
-	UKismetSystemLibrary::PrintString(this,"So 2");
-	
+
 
 	ABanSungOFFLINE_CPlusCharacter* MyCharacter = Cast<ABanSungOFFLINE_CPlusCharacter>(GetCharacter());
 	
@@ -307,35 +288,41 @@ void ABanSungOFFLINE_CPlusPlayerController::OnKeyBoard_Rifle(const FInputActionV
 		
 }
 
+
 void ABanSungOFFLINE_CPlusPlayerController::OnKeyBoard_ReloadAmmo(const FInputActionValue& Value)
 {
-	// Log để kiểm tra xem phím bàn phím có được nhấn hay không
-	UKismetSystemLibrary::PrintString(this,"Phim R");
-	
-
-	/*ABanSungOFFLINE_CPlusCharacter* MyCharacter = Cast<ABanSungOFFLINE_CPlusCharacter>(GetCharacter());
-	
+	ABanSungOFFLINE_CPlusCharacter* MyCharacter = Cast<ABanSungOFFLINE_CPlusCharacter>(GetPawn());
 	if (MyCharacter)
 	{
-		MyCharacter->ShowPistol();
-		
-	}
-
-	if (MyCharacter)
-	{
-		MyCharacter->ShowWeapon(0);
-		ShowWBCountBullet.Broadcast();
-		MyCharacter->Cur_weapon = 1;
-		auto Weapon_Array = MyCharacter->Weapons;
-		for (auto i:Weapon_Array)
+		// Lấy loại vũ khí hiện tại
+		TSubclassOf<AWeapon> CurrentWeaponClass = MyCharacter->GetCurrentWeaponClass();
+        
+		if (CurrentWeaponClass)
 		{
-			if (Cast<AGun_Pistol>(i))
+			// Lặp qua từng vũ khí trong mảng Weapons
+			for (AWeapon* Weapon : MyCharacter->Weapons)
 			{
-				MyCharacter->CurrentWeapon = i;
-				break;
+				if (Weapon && Weapon->IsA(CurrentWeaponClass)) // Kiểm tra xem vũ khí có phải là loại hiện tại
+				{
+					// Kiểm tra nếu băng đạn cần nạp
+					if (Weapon->CurrentAmmo < Weapon->MaxAmmo)
+					{
+						// Gọi hàm Reload() trên vũ khí
+						Weapon->ReLoadAmmo(); // Gọi hàm Reload từ lớp vũ khí
+
+						// In ra tên vũ khí vừa nạp đạn
+					//	UKismetSystemLibrary::PrintString(this, FString::Printf(TEXT("Đã nạp đạn cho vũ khí: %s"), *Weapon->GetClass()->GetName()));
+					}
+					else
+					{
+						UKismetSystemLibrary::PrintString(this, TEXT("Băng đạn đã đầy cho vũ khí: ") + Weapon->GetClass()->GetName());
+					}
+				}
 			}
 		}
-		
-	}*/
-		
+		else
+		{
+			UKismetSystemLibrary::PrintString(this, TEXT("Không có vũ khí nào được hiện."));
+		}
+	}
 }

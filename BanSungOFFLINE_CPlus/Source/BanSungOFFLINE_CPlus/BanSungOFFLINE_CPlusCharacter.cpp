@@ -47,6 +47,8 @@ ABanSungOFFLINE_CPlusCharacter::ABanSungOFFLINE_CPlusCharacter()
 	// Activate ticking in order to update the cursor every frame.
 	PrimaryActorTick.bCanEverTick = true;
 	PrimaryActorTick.bStartWithTickEnabled = true;
+
+	
 }
 
 void ABanSungOFFLINE_CPlusCharacter::Tick(float DeltaSeconds)
@@ -179,6 +181,20 @@ void ABanSungOFFLINE_CPlusCharacter::ShowWeapon(int32 Type)
 
 	// Nếu không tìm thấy vũ khí phù hợp với Type
 	UKismetSystemLibrary::PrintString(this, TEXT("Không tìm thấy vũ khí phù hợp."), true, true, FLinearColor::Red, 2.0f);
+}
+
+TSubclassOf<AWeapon> ABanSungOFFLINE_CPlusCharacter::GetCurrentWeaponClass()
+{
+	// Duyệt qua mảng Weapons để tìm vũ khí không bị ẩn
+	for (AWeapon* Weapon : Weapons)
+	{
+		if (Weapon && !Weapon->IsHidden())
+		{
+			return Weapon->GetClass(); // Trả về loại vũ khí đầu tiên không bị ẩn
+		}
+	}
+
+	return nullptr; // Nếu không có vũ khí nào, trả về nullptr
 }
 
 bool ABanSungOFFLINE_CPlusCharacter::IsWeaponVisible(TSubclassOf<AWeapon> WeaponClass)

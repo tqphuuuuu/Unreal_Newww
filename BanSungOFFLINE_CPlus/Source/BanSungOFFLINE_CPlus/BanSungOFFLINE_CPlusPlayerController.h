@@ -18,6 +18,8 @@ class UInputAction;
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FBulletCount);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDisplayWBBulletCount);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMaxHealth);
+
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
 UCLASS()
@@ -66,6 +68,17 @@ public:
 	UPROPERTY(BlueprintAssignable)
 	FDisplayWBBulletCount ShowWBCountBullet;
 
+
+	UPROPERTY(BlueprintAssignable)
+	FMaxHealth ShowHealth;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Health")
+	float Health;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Max Health")
+	float MaxHealth;
+	
+	bool ShootOneByOne;
 	
 	void OnShooting();
 	

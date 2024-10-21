@@ -5,6 +5,7 @@
 
 #include "BanSungOFFLINE_CPlus/BanSungOFFLINE_CPlusCharacter.h"
 #include "BanSungOFFLINE_CPlus/BanSungOFFLINE_CPlusPlayerController.h"
+#include "BanSungOFFLINE_CPlus/Enermy/Enermy.h"
 #include "Components/SphereComponent.h"
 #include "Kismet/KismetSystemLibrary.h"
 
@@ -43,23 +44,33 @@ FTimerHandle TimerHandle_SpawnRifle;
 
 void AWeapon::Fire(FVector& JerryPosition)
 {
-	
-	UKismetSystemLibrary::PrintString(this,"Da Click");
-	
-	
 	// Kiểm tra Type để quyết định loại đạn cần bắn
-	if ( Type == 0)  // Type 0 là Pistol
+	if (Type == 0)  // Type 0 là Pistol
 	{
-		UKismetSystemLibrary::PrintString(this,"Xem có chạy không");
-
+		
 		// Thực hiện bắn đạn Pistol
 		FTransform x = GunMesh->GetSocketTransform("Socket_Point");
-		UKismetSystemLibrary::PrintString(this, x.GetLocation().ToString());
+		//UKismetSystemLibrary::PrintString(this, x.GetLocation().ToString());
 
 		AProjectiles_Pistol* Jerry = GetWorld()->SpawnActor<AProjectiles_Pistol>(Projectile_Pistol, x);
 		FVector Temp = (JerryPosition - GetActorLocation());
 		Temp.Normalize();
 		Jerry->Velocity = Temp * SpeedAmmo;
+		UKismetSystemLibrary::PrintString(this,FString::SanitizeFloat(Jerry->Velocity.Length()));
+
+	}
+	else
+	{
+		if (Type == 1)
+		{
+			FTransform x = GunMesh->GetSocketTransform("Socket_Point");
+			//	UKismetSystemLibrary::PrintString(this, x.GetLocation().ToString());
+
+			AProjectiles_Rifle* Jerry = GetWorld()->SpawnActor<AProjectiles_Rifle>(Projectile_Rifle, x);
+			FVector Temp = (JerryPosition - GetActorLocation());
+			Temp.Normalize();
+			Jerry->Velocity = Temp * SpeedAmmo;
+		}
 	}
 	
 
@@ -70,23 +81,46 @@ void AWeapon::Fire(FVector& JerryPosition)
 
 void AWeapon::FireShooting(FVector& JerryPosition)
 {
-	if (Type == 1)
+	/*if (Type == 1)
 	{
 		ABanSungOFFLINE_CPlusPlayerController* MyController = Cast<ABanSungOFFLINE_CPlusPlayerController>(GetOwner());
 	
 		// Thực hiện bắn đạn Rifle
-		UKismetSystemLibrary::PrintString(this,"Xem có chạy không1");
-
 		FTransform x = GunMesh->GetSocketTransform("Socket_Point");
-		UKismetSystemLibrary::PrintString(this, x.GetLocation().ToString());
+	//	UKismetSystemLibrary::PrintString(this, x.GetLocation().ToString());
 
 		AProjectiles_Rifle* Jerry = GetWorld()->SpawnActor<AProjectiles_Rifle>(Projectile_Rifle, x);
 		FVector Temp = (JerryPosition - GetActorLocation());
 		Temp.Normalize();
 		Jerry->Velocity = Temp * SpeedAmmo;
-
+		
+		UKismetSystemLibrary::PrintString(this,FString::SanitizeFloat(Jerry->Velocity.Length()));
 		CurrentAmmo--;
-	}
+	}*/
 	
 }
 
+void AWeapon::ReLoadAmmo()
+{
+	if (CurrentAmmo == MaxAmmo)  // Kiểm tra nếu băng đạn đã đầy
+	{
+		return;  // Không cần nạp đạn nếu băng đạn đã đầy
+	}
+
+	// Tính số đạn cần để nạp đầy băng đạn
+	int32 AmmoNeededToFillClip = MaxAmmo - CurrentAmmo;
+
+	// Nếu đạn dự trữ đủ để nạp đầy băng
+	if (Ammo >= AmmoNeededToFillClip)
+	{
+		// Nạp đầy băng đạn và trừ đạn dự trữ
+		CurrentAmmo += AmmoNeededToFillClip;
+		Ammo -= AmmoNeededToFillClip;
+	}
+	else
+	{
+		// Nếu không đủ đạn dự trữ, nạp hết đạn còn lại
+		CurrentAmmo += Ammo;  
+		Ammo = 0;  // Không còn đạn dự trữ
+	}
+}

@@ -64,11 +64,15 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Gun Properties")
 	int Type;
 
+	void ReLoadAmmo();
 
+	
 
 
 	void FireShooting(FVector& JerryPosition);
 
 	
 	virtual void Fire(FVector& JerryPosition);
+
+	
 };
