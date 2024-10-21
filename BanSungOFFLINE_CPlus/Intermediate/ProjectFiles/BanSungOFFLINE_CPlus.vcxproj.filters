@@ -82,6 +82,27 @@
     <ClInclude Include="..\..\Source\BanSungOFFLINE_CPlus\Enermy\Enermy_Zombie.h">
       <Filter>Source\BanSungOFFLINE_CPlus\Enermy</Filter>
     </ClInclude>
+    <Filter Include="Source\BanSungOFFLINE_CPlus\ItemPickUp">
+      <UniqueIdentifier>{C0479679-EA10-3F7B-8672-5837A136375A}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\BanSungOFFLINE_CPlus\ItemPickUp\ItemPickUp.cpp">
+      <Filter>Source\BanSungOFFLINE_CPlus\ItemPickUp</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BanSungOFFLINE_CPlus\ItemPickUp\ItemPickUp.h">
+      <Filter>Source\BanSungOFFLINE_CPlus\ItemPickUp</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\BanSungOFFLINE_CPlus\ItemPickUp\ItemPickUp_AmmoPistol.cpp">
+      <Filter>Source\BanSungOFFLINE_CPlus\ItemPickUp</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BanSungOFFLINE_CPlus\ItemPickUp\ItemPickUp_AmmoPistol.h">
+      <Filter>Source\BanSungOFFLINE_CPlus\ItemPickUp</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\BanSungOFFLINE_CPlus\ItemPickUp\ItemPickUp_Health.cpp">
+      <Filter>Source\BanSungOFFLINE_CPlus\ItemPickUp</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BanSungOFFLINE_CPlus\ItemPickUp\ItemPickUp_Health.h">
+      <Filter>Source\BanSungOFFLINE_CPlus\ItemPickUp</Filter>
+    </ClInclude>
     <Filter Include="Source\BanSungOFFLINE_CPlus\Projectiles">
       <UniqueIdentifier>{01098432-E366-3917-A4ED-A17825F64661}</UniqueIdentifier>
     </Filter>

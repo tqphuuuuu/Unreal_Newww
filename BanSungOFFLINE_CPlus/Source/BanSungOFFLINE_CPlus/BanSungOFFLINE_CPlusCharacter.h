@@ -56,6 +56,7 @@ public:
 
 	TSubclassOf<AWeapon> GetCurrentWeaponClass();
 
+	
 
 private:
 	/** Top down camera */

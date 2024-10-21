@@ -26,4 +26,7 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+	virtual void AttackCharacter() override; // Ghi đè phương thức tấn công
+
 };

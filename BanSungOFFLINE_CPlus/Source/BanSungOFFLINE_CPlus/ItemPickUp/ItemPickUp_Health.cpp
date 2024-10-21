@@ -34,8 +34,6 @@ void AItemPickUp_Health::Tick(float DeltaTime)
 void AItemPickUp_Health::OnOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor,
 	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	//UKismetSystemLibrary::DrawDebugSphere(this, GetActorLocation(), SphereComponent->GetScaledSphereRadius(), 12, FColor::Red, false, 5.0f);
-
 	
 	ABanSungOFFLINE_CPlusCharacter* PlayerCharacter = Cast<ABanSungOFFLINE_CPlusCharacter>(OtherActor);
 	if (IsValid(PlayerCharacter))
@@ -47,9 +45,8 @@ void AItemPickUp_Health::OnOverlap(UPrimitiveComponent* OverlappedComp, AActor* 
 			
 			if(PlayerController->Health <=90)
 			{
-				//UKismetSystemLibrary::PrintString(this, "Da va cham voi pickup");
-				PlayerController->Health += 10;  // Add ammo to the controller
-				Destroy();  // Destroy the ammo pickup
+				PlayerController->Health += 10;  
+				Destroy(); 
 				
 			}
 			else

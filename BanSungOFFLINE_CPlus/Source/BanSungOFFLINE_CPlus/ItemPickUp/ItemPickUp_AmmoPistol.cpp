@@ -35,35 +35,34 @@ void AItemPickUp_AmmoPistol::Tick(float DeltaTime)
 void AItemPickUp_AmmoPistol::OnOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor,
 	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	//UKismetSystemLibrary::DrawDebugSphere(this, GetActorLocation(), SphereComponent->GetScaledSphereRadius(), 12, FColor::Red, false, 5.0f);
-
+	// Kiểm tra xem OtherActor có phải là nhân vật hay không
 	ABanSungOFFLINE_CPlusCharacter* PlayerCharacter = Cast<ABanSungOFFLINE_CPlusCharacter>(OtherActor);
 	if (IsValid(PlayerCharacter))
 	{
-		
-		AWeapon_Pistol* Pistol = Cast<AWeapon_Pistol>(PlayerCharacter->GetOwner()); 
-
-		if (IsValid(Pistol))
+		for (AWeapon* Weapon : PlayerCharacter->Weapons)
 		{
-
-			if(Pistol->Ammo <= 225 )
+			// Kiểm tra xem vũ khí có phải là Pistol không
+			AWeapon_Pistol* Pistol = Cast<AWeapon_Pistol>(Weapon);
+			if (IsValid(Pistol))
 			{
+				if (Pistol->Ammo < 225)
+				{
+					Pistol->Ammo += 15;
 
-				//UKismetSystemLibrary::PrintString(this, "Da va cham voi pickup");
-				Pistol->CurrentAmmo += 15;  // Add ammo to the controller
-				Destroy();  // Destroy the ammo pickup
-				
-			}
-			else
-			{
-				Pistol->Ammo =240 ;
-				Destroy();
+					if (Pistol->Ammo > 240)
+					{
+						Pistol->Ammo = 240;
+					}
+					// Phá hủy đối tượng nhặt đạn
+					Destroy();
+				}
+				else
+				{
+					UKismetSystemLibrary::PrintString(this, TEXT("Số lượng đạn đã đầy."), true, true, FLinearColor::Yellow, 2.0f);
+				}
+				return; // Thoát hàm khi đã xử lý xong Pistol
 			}
 		}
-		else
-		{
-			UKismetSystemLibrary::PrintString(this,"Valid is not Pistol");
-		}
-
 	}
 }
+

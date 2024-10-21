@@ -5,7 +5,8 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "Perception/PawnSensingComponent.h"
-
+#include "GameFramework/Actor.h"
+#include "DrawDebugHelpers.h"
 #include "Enermy.generated.h"
 
 UCLASS()
@@ -29,13 +30,17 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Animation")
 	UAnimationAsset* DeathAnimation;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Damage")
-	float DamageAmount = 10.0f; 
+
 
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
+	UPROPERTY(EditDefaultsOnly, Category = "Combat")
+	float AttackDistance = 500.0f; 
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Animation")
+	class UAnimSequence* AttackAnimation;
+	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gun Properties")
 	float Damage;
 
@@ -44,10 +49,10 @@ public:
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Gun Properties")
 	int Type;
+
+	virtual void AttackCharacter();
+	
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	/*UFUNCTION()
-	void OnOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp,
-		int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);*/
 };

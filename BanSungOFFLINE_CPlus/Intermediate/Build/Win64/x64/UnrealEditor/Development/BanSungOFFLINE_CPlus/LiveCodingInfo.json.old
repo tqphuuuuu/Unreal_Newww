@@ -2,10 +2,16 @@
 	"RemapUnityFiles": 
 	{
 		"Module.BanSungOFFLINE_CPlus.cpp.obj": [
-			"ItemPickUp_AmmoPistol.gen.cpp.obj",
-			"ItemPickUp_Health.gen.cpp.obj",
 			"BanSungOFFLINE_CPlus.cpp.obj",
 			"BanSungOFFLINE_CPlusGameMode.cpp.obj",
+			"Enermy_Boss.cpp.obj",
+			"Enermy_Zombie.cpp.obj",
+			"ItemPickUp.cpp.obj",
+			"ItemPickUp_Health.cpp.obj",
+			"Projectiles.cpp.obj",
+			"Projectiles_Pistol.cpp.obj",
+			"Projectiles_Rifle.cpp.obj",
+			"Weapon.cpp.obj",
 			"Weapon_Pistol.cpp.obj",
 			"Weapon_Rifle.cpp.obj",
 			"BanSungOFFLINE_CPlus.init.gen.cpp.obj",
@@ -16,6 +22,9 @@
 			"Enermy_Boss.gen.cpp.obj",
 			"Enermy_Zombie.gen.cpp.obj",
 			"ItemPickUp.gen.cpp.obj",
+			"ItemPickUp_AmmoPistol.gen.cpp.obj",
+			"ItemPickUp_AmmoRifle.gen.cpp.obj",
+			"ItemPickUp_Health.gen.cpp.obj",
 			"Projectiles.gen.cpp.obj",
 			"Projectiles_Pistol.gen.cpp.obj",
 			"Projectiles_Rifle.gen.cpp.obj",
@@ -25,15 +34,8 @@
 			"BanSungOFFLINE_CPlusCharacter.cpp.obj",
 			"BanSungOFFLINE_CPlusPlayerController.cpp.obj",
 			"Enermy.cpp.obj",
-			"Enermy_Boss.cpp.obj",
-			"Enermy_Zombie.cpp.obj",
-			"ItemPickUp.cpp.obj",
 			"ItemPickUp_AmmoPistol.cpp.obj",
-			"ItemPickUp_Health.cpp.obj",
-			"Projectiles.cpp.obj",
-			"Projectiles_Pistol.cpp.obj",
-			"Projectiles_Rifle.cpp.obj",
-			"Weapon.cpp.obj"
+			"ItemPickUp_AmmoRifle.cpp.obj"
 		]
 	}
 }
