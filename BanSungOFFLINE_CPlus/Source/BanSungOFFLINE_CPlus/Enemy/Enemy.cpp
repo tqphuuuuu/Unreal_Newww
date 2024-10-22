@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "Enermy.h"
+#include "Enemy.h"
 
 #include "BanSungOFFLINE_CPlus/BanSungOFFLINE_CPlusCharacter.h"
 #include "BanSungOFFLINE_CPlus/BanSungOFFLINE_CPlusPlayerController.h"
@@ -11,7 +11,7 @@
 #include "Perception/PawnSensingComponent.h"
 
 // Sets default values
-AEnermy::AEnermy()
+AEnemy::AEnemy()
 {
 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
@@ -23,22 +23,23 @@ AEnermy::AEnermy()
 	PawnSensingComponent->SightRadius = 2500.0f; // Adjust the range of sight
 	PawnSensingComponent->SetPeripheralVisionAngle(60.0f); // Set the field of view
 
-	/*WidgetComponent = CreateDefaultSubobject<UWidgetComponent>(TEXT("Widget"));
-	WidgetComponent->SetupAttachment(SphereComponent);*/
+	WidgetComponent = CreateDefaultSubobject<UWidgetComponent>(TEXT("HealthWidget"));
+	WidgetComponent->SetupAttachment(RootComponent);
+
 	
-	SphereComponent->OnComponentBeginOverlap.AddDynamic(this, &AEnermy::OnOverlap);
+	SphereComponent->OnComponentBeginOverlap.AddDynamic(this, &AEnemy::OnOverlap);
 
 }
 
 // Called when the game starts or when spawned
-void AEnermy::BeginPlay()
+void AEnemy::BeginPlay()
 {
 	Super::BeginPlay();
 	
 }
 
 // Called every frame
-void AEnermy::Tick(float DeltaTime)
+void AEnemy::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 	Timer++;
@@ -47,11 +48,11 @@ void AEnermy::Tick(float DeltaTime)
 	
 }
 
-void AEnermy::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+void AEnemy::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 }
-void AEnermy::AttackCharacter()
+void AEnemy::AttackCharacter()
 {
 	FVector Start = GetMesh()->GetSocketLocation(FName("A"));
 	FVector End = GetMesh()->GetSocketLocation(FName("B"));
@@ -91,7 +92,7 @@ void AEnermy::AttackCharacter()
 	}
 }
 
-void AEnermy::OnOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+void AEnemy::OnOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	// Kiểm tra nếu OtherActor là nhân vật
 	ACharacter* PlayerCharacter = Cast<ACharacter>(OtherActor);

@@ -3,18 +3,18 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Enermy.h"
+#include "Enemy.h"
 #include "GameFramework/Character.h"
-#include "Enermy_Boss.generated.h"
+#include "Enemy_Boss.generated.h"
 
 UCLASS()
-class BANSUNGOFFLINE_CPLUS_API AEnermy_Boss : public AEnermy
+class BANSUNGOFFLINE_CPLUS_API AEnemy_Boss : public AEnemy
 {
 	GENERATED_BODY()
 
 public:
 	// Sets default values for this character's properties
-	AEnermy_Boss();
+	AEnemy_Boss();
 
 protected:
 	// Called when the game starts or when spawned

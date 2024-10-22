@@ -276,18 +276,18 @@
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClInclude Include="..\..\Source\BanSungOFFLINE_CPlus\BanSungOFFLINE_CPlusPlayerController.h"/>
-    <ClCompile Include="..\..\Source\BanSungOFFLINE_CPlus\Enermy\Enermy.cpp">
+    <ClCompile Include="..\..\Source\BanSungOFFLINE_CPlus\Enemy\Enemy.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
-    <ClInclude Include="..\..\Source\BanSungOFFLINE_CPlus\Enermy\Enermy.h"/>
-    <ClCompile Include="..\..\Source\BanSungOFFLINE_CPlus\Enermy\Enermy_Boss.cpp">
+    <ClInclude Include="..\..\Source\BanSungOFFLINE_CPlus\Enemy\Enemy.h" />
+    <ClCompile Include="..\..\Source\BanSungOFFLINE_CPlus\Enemy\Enemy_Boss.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
-    <ClInclude Include="..\..\Source\BanSungOFFLINE_CPlus\Enermy\Enermy_Boss.h"/>
-    <ClCompile Include="..\..\Source\BanSungOFFLINE_CPlus\Enermy\Enermy_Zombie.cpp">
+    <ClInclude Include="..\..\Source\BanSungOFFLINE_CPlus\Enemy\Enemy_Boss.h" />
+    <ClCompile Include="..\..\Source\BanSungOFFLINE_CPlus\Enemy\Enemy_Zombie.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
-    <ClInclude Include="..\..\Source\BanSungOFFLINE_CPlus\Enermy\Enermy_Zombie.h"/>
+    <ClInclude Include="..\..\Source\BanSungOFFLINE_CPlus\Enemy\Enemy_Zombie.h" />
     <ClCompile Include="..\..\Source\BanSungOFFLINE_CPlus\ItemPickUp\ItemPickUp.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>

@@ -1,27 +1,28 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "Enermy_Boss.h"
+#include "Enemy_Boss.h"
 
 
 // Sets default values
-AEnermy_Boss::AEnermy_Boss()
+AEnemy_Boss::AEnemy_Boss()
 {
 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 	Health = 100;
+	MaxHealth =100;
 	Damage = 10.f;
 }
 
 // Called when the game starts or when spawned
-void AEnermy_Boss::BeginPlay()
+void AEnemy_Boss::BeginPlay()
 {
 	Super::BeginPlay();
 	
 }
 
 // Called every frame
-void AEnermy_Boss::Tick(float DeltaTime)
+void AEnemy_Boss::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 	if (Health <= 0)
@@ -31,7 +32,7 @@ void AEnermy_Boss::Tick(float DeltaTime)
 }
 
 // Called to bind functionality to input
-void AEnermy_Boss::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+void AEnemy_Boss::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 }

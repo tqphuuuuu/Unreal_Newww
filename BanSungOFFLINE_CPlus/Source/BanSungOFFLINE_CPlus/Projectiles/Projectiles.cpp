@@ -4,7 +4,7 @@
 #include "Projectiles.h"
 
 #include "BanSungOFFLINE_CPlus/BanSungOFFLINE_CPlusCharacter.h"
-#include "BanSungOFFLINE_CPlus/Enermy/Enermy.h"
+#include "BanSungOFFLINE_CPlus/Enemy/Enemy.h"
 #include "Components/SphereComponent.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Kismet/GameplayStatics.h"
@@ -52,7 +52,7 @@ void AProjectiles::OnOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherA
 	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	// Kiểm tra nếu đối tượng va chạm là kẻ địch (Enermy)
-	AEnermy* Enermy = Cast<AEnermy>(OtherActor);
+	AEnemy* Enermy = Cast<AEnemy>(OtherActor);
 	if (IsValid(Enermy))
 	{
 		// Giảm máu của kẻ địch khi viên đạn va chạm

@@ -5,7 +5,7 @@
 
 #include "BanSungOFFLINE_CPlus/BanSungOFFLINE_CPlusCharacter.h"
 #include "BanSungOFFLINE_CPlus/BanSungOFFLINE_CPlusPlayerController.h"
-#include "BanSungOFFLINE_CPlus/Enermy/Enermy.h"
+#include "BanSungOFFLINE_CPlus/Enemy/Enemy.h"
 #include "Components/SphereComponent.h"
 #include "Kismet/KismetSystemLibrary.h"
 

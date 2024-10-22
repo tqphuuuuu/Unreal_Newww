@@ -8,16 +8,16 @@
 #include "GameFramework/Actor.h"
 #include "DrawDebugHelpers.h"
 #include "Components/WidgetComponent.h"
-#include "Enermy.generated.h"
+#include "Enemy.generated.h"
 
 UCLASS()
-class BANSUNGOFFLINE_CPLUS_API AEnermy : public ACharacter
+class BANSUNGOFFLINE_CPLUS_API AEnemy : public ACharacter
 {
 	GENERATED_BODY()
 
 public:
 	// Sets default values for this character's properties
-	AEnermy();
+	AEnemy();
 
 protected:
 	// Called when the game starts or when spawned
@@ -50,10 +50,15 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Health")
 	float Health;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MaxHealth")
+	float MaxHealth;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Type")
 	int Type;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "UI", meta = (AllowPrivateAccess = "true"))
+	UWidgetComponent* WidgetComponent;
 	/*
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Widget")
 	UWidgetComponent* WidgetComponent;
@@ -74,5 +79,7 @@ public:
 	
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+	
 
 };
