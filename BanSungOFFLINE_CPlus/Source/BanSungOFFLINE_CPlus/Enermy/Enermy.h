@@ -7,6 +7,7 @@
 #include "Perception/PawnSensingComponent.h"
 #include "GameFramework/Actor.h"
 #include "DrawDebugHelpers.h"
+#include "Components/WidgetComponent.h"
 #include "Enermy.generated.h"
 
 UCLASS()
@@ -30,6 +31,9 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Animation")
 	UAnimationAsset* DeathAnimation;
+	
+	
+
 
 
 public:
@@ -41,16 +45,32 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Animation")
 	class UAnimSequence* AttackAnimation;
 	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gun Properties")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Damage")
 	float Damage;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gun Properties")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Health")
 	float Health;
 	
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Gun Properties")
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Type")
 	int Type;
 
+	/*
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Widget")
+	UWidgetComponent* WidgetComponent;
+	*/
+
+	
 	virtual void AttackCharacter();
+
+	UFUNCTION()
+	void OnOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp,
+		int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+
+	void DelayedAttackCharacter();
+
+	FTimerHandle _loopTimeHanlde;
+
+	int32 Timer = 0;
 	
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;

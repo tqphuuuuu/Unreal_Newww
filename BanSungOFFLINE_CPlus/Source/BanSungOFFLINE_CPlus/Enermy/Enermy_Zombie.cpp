@@ -11,6 +11,7 @@ AEnermy_Zombie::AEnermy_Zombie()
 	PrimaryActorTick.bCanEverTick = true;
 
 	Health = 100;
+	Damage = 5.f;
 }
 
 // Called when the game starts or when spawned
@@ -35,4 +36,5 @@ void AEnermy_Zombie::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 }
+
 

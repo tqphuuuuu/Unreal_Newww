@@ -97,6 +97,12 @@
     <ClInclude Include="..\..\Source\BanSungOFFLINE_CPlus\ItemPickUp\ItemPickUp_AmmoPistol.h">
       <Filter>Source\BanSungOFFLINE_CPlus\ItemPickUp</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\BanSungOFFLINE_CPlus\ItemPickUp\ItemPickUp_AmmoRifle.cpp">
+      <Filter>Source\BanSungOFFLINE_CPlus\ItemPickUp</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BanSungOFFLINE_CPlus\ItemPickUp\ItemPickUp_AmmoRifle.h">
+      <Filter>Source\BanSungOFFLINE_CPlus\ItemPickUp</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\BanSungOFFLINE_CPlus\ItemPickUp\ItemPickUp_Health.cpp">
       <Filter>Source\BanSungOFFLINE_CPlus\ItemPickUp</Filter>
     </ClCompile>

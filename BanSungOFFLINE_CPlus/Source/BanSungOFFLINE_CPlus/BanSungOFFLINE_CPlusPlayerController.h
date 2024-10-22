@@ -79,6 +79,7 @@ public:
 	float MaxHealth;
 	
 	bool ShootOneByOne;
+	int32 ShootRate = 0;
 	
 	void OnShooting();
 	

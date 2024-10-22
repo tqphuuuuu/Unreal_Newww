@@ -3,12 +3,16 @@
 	{
 		"Module.BanSungOFFLINE_CPlus.cpp.obj": [
 			"BanSungOFFLINE_CPlus.cpp.obj",
+			"BanSungOFFLINE_CPlusCharacter.cpp.obj",
 			"BanSungOFFLINE_CPlusGameMode.cpp.obj",
+			"Enermy_Boss.cpp.obj",
 			"ItemPickUp.cpp.obj",
+			"ItemPickUp_AmmoPistol.cpp.obj",
+			"ItemPickUp_AmmoRifle.cpp.obj",
+			"ItemPickUp_Health.cpp.obj",
 			"Projectiles.cpp.obj",
 			"Projectiles_Pistol.cpp.obj",
 			"Projectiles_Rifle.cpp.obj",
-			"Weapon.cpp.obj",
 			"Weapon_Pistol.cpp.obj",
 			"Weapon_Rifle.cpp.obj",
 			"BanSungOFFLINE_CPlus.init.gen.cpp.obj",
@@ -28,14 +32,10 @@
 			"Weapon.gen.cpp.obj",
 			"Weapon_Pistol.gen.cpp.obj",
 			"Weapon_Rifle.gen.cpp.obj",
-			"BanSungOFFLINE_CPlusCharacter.cpp.obj",
 			"BanSungOFFLINE_CPlusPlayerController.cpp.obj",
 			"Enermy.cpp.obj",
-			"Enermy_Boss.cpp.obj",
 			"Enermy_Zombie.cpp.obj",
-			"ItemPickUp_AmmoPistol.cpp.obj",
-			"ItemPickUp_AmmoRifle.cpp.obj",
-			"ItemPickUp_Health.cpp.obj"
+			"Weapon.cpp.obj"
 		]
 	}
 }

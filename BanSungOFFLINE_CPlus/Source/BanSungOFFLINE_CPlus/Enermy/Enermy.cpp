@@ -21,7 +21,13 @@ AEnermy::AEnermy()
 
 	PawnSensingComponent = CreateDefaultSubobject<UPawnSensingComponent>(TEXT("PawnSensingComponent"));
 	PawnSensingComponent->SightRadius = 2500.0f; // Adjust the range of sight
-	PawnSensingComponent->SetPeripheralVisionAngle(30.0f); // Set the field of view
+	PawnSensingComponent->SetPeripheralVisionAngle(60.0f); // Set the field of view
+
+	/*WidgetComponent = CreateDefaultSubobject<UWidgetComponent>(TEXT("Widget"));
+	WidgetComponent->SetupAttachment(SphereComponent);*/
+	
+	SphereComponent->OnComponentBeginOverlap.AddDynamic(this, &AEnermy::OnOverlap);
+
 }
 
 // Called when the game starts or when spawned
@@ -35,6 +41,9 @@ void AEnermy::BeginPlay()
 void AEnermy::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	Timer++;
+	AttackCharacter();
+		
 	
 }
 
@@ -52,36 +61,53 @@ void AEnermy::AttackCharacter()
 
 	// Thực hiện phép dò tia (Line Trace) từ "RightHand" đến "RightArm"
 	FHitResult HitResult;
-	bool bHit = UKismetSystemLibrary::LineTraceSingle(
-		GetWorld(),
-		Start,  // Điểm bắt đầu là từ socket 
-		End,    // Điểm kết thúc là từ socket 
-		ETraceTypeQuery::TraceTypeQuery1, 
+	bool bHit = UKismetSystemLibrary::LineTraceSingle(GetWorld(),Start,End,
+		static_cast<ETraceTypeQuery>(ECollisionChannel::ECC_Pawn),  // Thử với kênh Pawn
 		false,
 		IgnoreActors,
-		EDrawDebugTrace::ForDuration, // Hiển thị Line Trace trong một thời gian ngắn để debug
+		EDrawDebugTrace::None,
 		HitResult,
-		true
-	);
+		true);
 	
 	if (bHit)
 	{
-		GetMesh()->PlayAnimation(AttackAnimation,true);
-		// Kiểm tra nếu đối tượng va chạm là nhân vật
+		// Kiểm tra đối tượng bị hit có phải là nhân vật không
 		ACharacter* PlayerCharacter = Cast<ACharacter>(HitResult.GetActor());
-		if (PlayerCharacter)
+		if (PlayerCharacter && PlayerCharacter->IsA(ABanSungOFFLINE_CPlusCharacter::StaticClass()))
 		{
-			// Tấn công nhân vật
-			UKismetSystemLibrary::PrintString(this, TEXT("Tấn công nhân vật!"), true, true, FLinearColor::Green, 2.0f);
-
 			ABanSungOFFLINE_CPlusPlayerController* PlayerController = Cast<ABanSungOFFLINE_CPlusPlayerController>(PlayerCharacter->GetController());
 			if (PlayerController)
 			{
-				PlayerController->Health -=Damage;
+				if (Timer >= 300)
+				{
+					Timer = 0;
+					PlayerController->Health -=Damage;
+					PlayerController->ShowHealth.Broadcast();
+				}
 			}
-			// Gây damage lên nhân vật
-			UGameplayStatics::ApplyDamage(PlayerCharacter, Damage, GetController(), this, UDamageType::StaticClass());
+
 		}
+		
+	}
+}
+
+void AEnermy::OnOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	// Kiểm tra nếu OtherActor là nhân vật
+	ACharacter* PlayerCharacter = Cast<ACharacter>(OtherActor);
+	if (PlayerCharacter && PlayerCharacter->IsA(ABanSungOFFLINE_CPlusCharacter::StaticClass()))
+	{
+		// Chạy animation tấn công
+		if (AttackAnimation)
+		{
+				GetMesh()->PlayAnimation(AttackAnimation, true);
+				
+		}
+
+	}
+	else
+	{
+		
 	}
 }
 

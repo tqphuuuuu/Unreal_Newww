@@ -73,8 +73,6 @@ void AWeapon::Fire(FVector& JerryPosition)
 		}
 	}
 	
-
-	// Trừ đạn sau khi bắn
 	CurrentAmmo--;
 
 }

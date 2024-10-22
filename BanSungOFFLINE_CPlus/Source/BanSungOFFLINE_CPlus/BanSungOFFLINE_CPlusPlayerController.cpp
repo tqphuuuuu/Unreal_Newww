@@ -151,8 +151,9 @@ void ABanSungOFFLINE_CPlusPlayerController::OnSetDestinationTriggered()
 			{
 				if (SelectedWeapon -> Type == 1)
 				{
-					Cast<AWeapon>(MyCharacter->CurrentWeapon)->Fire(DirectionMouse);
-
+					ShootRate++;
+					if (ShootRate % 10 == 0)
+						Cast<AWeapon>(MyCharacter->CurrentWeapon)->Fire(DirectionMouse);
 				}
 				else if (SelectedWeapon->Type == 0 )
 				{
@@ -175,6 +176,7 @@ void ABanSungOFFLINE_CPlusPlayerController::OnSetDestinationTriggered()
 void ABanSungOFFLINE_CPlusPlayerController::OnShooting()
 {
 	ShootOneByOne = false;
+	ShootRate = 0;
 }
 
 

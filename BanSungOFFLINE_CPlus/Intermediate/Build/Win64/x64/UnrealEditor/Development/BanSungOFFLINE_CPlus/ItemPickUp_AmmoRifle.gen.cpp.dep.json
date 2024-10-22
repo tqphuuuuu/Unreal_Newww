@@ -1,23 +1,23 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "e:\\unreal_newww\\bansungoffline_cplus\\intermediate\\build\\win64\\unrealeditor\\inc\\bansungoffline_cplus\\uht\\itempickup_ammorifle.gen.cpp",
+        "Source": "c:\\users\\tqphuuuuu\\desktop\\githubnew\\unreal_newww\\bansungoffline_cplus\\intermediate\\build\\win64\\unrealeditor\\inc\\bansungoffline_cplus\\uht\\itempickup_ammorifle.gen.cpp",
         "ProvidedModule": "",
-        "PCH": "e:\\unreal_newww\\bansungoffline_cplus\\intermediate\\build\\win64\\x64\\bansungoffline_cpluseditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "PCH": "c:\\users\\tqphuuuuu\\desktop\\githubnew\\unreal_newww\\bansungoffline_cplus\\intermediate\\build\\win64\\x64\\bansungoffline_cpluseditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
         "Includes": [
-            "e:\\unreal_newww\\bansungoffline_cplus\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\bansungoffline_cplus\\definitions.bansungoffline_cplus.h",
-            "e:\\unreal_newww\\bansungoffline_cplus\\source\\bansungoffline_cplus\\itempickup\\itempickup_ammorifle.h",
-            "e:\\unreal_newww\\bansungoffline_cplus\\source\\bansungoffline_cplus\\itempickup\\itempickup.h",
-            "e:\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\gameframework\\rotatingmovementcomponent.h",
-            "e:\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\gameframework\\movementcomponent.h",
-            "e:\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\movementcomponent.generated.h",
-            "e:\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\rotatingmovementcomponent.generated.h",
-            "e:\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\components\\spherecomponent.h",
-            "e:\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\components\\shapecomponent.h",
-            "e:\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\shapecomponent.generated.h",
-            "e:\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\spherecomponent.generated.h",
-            "e:\\unreal_newww\\bansungoffline_cplus\\intermediate\\build\\win64\\unrealeditor\\inc\\bansungoffline_cplus\\uht\\itempickup.generated.h",
-            "e:\\unreal_newww\\bansungoffline_cplus\\intermediate\\build\\win64\\unrealeditor\\inc\\bansungoffline_cplus\\uht\\itempickup_ammorifle.generated.h"
+            "c:\\users\\tqphuuuuu\\desktop\\githubnew\\unreal_newww\\bansungoffline_cplus\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\bansungoffline_cplus\\definitions.bansungoffline_cplus.h",
+            "c:\\users\\tqphuuuuu\\desktop\\githubnew\\unreal_newww\\bansungoffline_cplus\\source\\bansungoffline_cplus\\itempickup\\itempickup_ammorifle.h",
+            "c:\\users\\tqphuuuuu\\desktop\\githubnew\\unreal_newww\\bansungoffline_cplus\\source\\bansungoffline_cplus\\itempickup\\itempickup.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\gameframework\\rotatingmovementcomponent.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\gameframework\\movementcomponent.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\movementcomponent.generated.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\rotatingmovementcomponent.generated.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\components\\spherecomponent.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\components\\shapecomponent.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\shapecomponent.generated.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\spherecomponent.generated.h",
+            "c:\\users\\tqphuuuuu\\desktop\\githubnew\\unreal_newww\\bansungoffline_cplus\\intermediate\\build\\win64\\unrealeditor\\inc\\bansungoffline_cplus\\uht\\itempickup.generated.h",
+            "c:\\users\\tqphuuuuu\\desktop\\githubnew\\unreal_newww\\bansungoffline_cplus\\intermediate\\build\\win64\\unrealeditor\\inc\\bansungoffline_cplus\\uht\\itempickup_ammorifle.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []
