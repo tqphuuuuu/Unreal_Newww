@@ -110,7 +110,6 @@ protected:
 
 
 	bool bIsShooting = false; //  biến để theo dõi trạng thái bấm chuột
-	
 
 
 private:

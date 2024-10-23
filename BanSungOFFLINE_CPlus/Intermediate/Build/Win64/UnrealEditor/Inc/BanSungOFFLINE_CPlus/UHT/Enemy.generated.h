@@ -17,6 +17,10 @@ struct FHitResult;
 #endif
 #define BANSUNGOFFLINE_CPLUS_Enemy_generated_h
 
+#define FID_Users_TQPhuuuuu_Desktop_GitHubNew_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_Enemy_Enemy_h_12_DELEGATE \
+BANSUNGOFFLINE_CPLUS_API void FSetHealthWidget_DelegateWrapper(const FMulticastScriptDelegate& SetHealthWidget);
+
+
 #define FID_Users_TQPhuuuuu_Desktop_GitHubNew_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_Enemy_Enemy_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execOnOverlap);
 

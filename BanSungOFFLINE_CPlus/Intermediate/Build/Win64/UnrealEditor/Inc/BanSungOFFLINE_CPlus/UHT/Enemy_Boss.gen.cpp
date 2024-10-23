@@ -80,10 +80,10 @@ AEnemy_Boss::~AEnemy_Boss() {}
 struct Z_CompiledInDeferFile_FID_Users_TQPhuuuuu_Desktop_GitHubNew_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_Enemy_Enemy_Boss_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AEnemy_Boss, AEnemy_Boss::StaticClass, TEXT("AEnemy_Boss"), &Z_Registration_Info_UClass_AEnemy_Boss, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemy_Boss), 2702952429U) },
+		{ Z_Construct_UClass_AEnemy_Boss, AEnemy_Boss::StaticClass, TEXT("AEnemy_Boss"), &Z_Registration_Info_UClass_AEnemy_Boss, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemy_Boss), 1169533485U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_TQPhuuuuu_Desktop_GitHubNew_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_Enemy_Enemy_Boss_h_4165461219(TEXT("/Script/BanSungOFFLINE_CPlus"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_TQPhuuuuu_Desktop_GitHubNew_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_Enemy_Enemy_Boss_h_3180833788(TEXT("/Script/BanSungOFFLINE_CPlus"),
 	Z_CompiledInDeferFile_FID_Users_TQPhuuuuu_Desktop_GitHubNew_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_Enemy_Enemy_Boss_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_TQPhuuuuu_Desktop_GitHubNew_Unreal_Newww_BanSungOFFLINE_CPlus_Source_BanSungOFFLINE_CPlus_Enemy_Enemy_Boss_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

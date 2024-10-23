@@ -309,11 +309,10 @@ void ABanSungOFFLINE_CPlusPlayerController::OnKeyBoard_ReloadAmmo(const FInputAc
 					// Kiểm tra nếu băng đạn cần nạp
 					if (Weapon->CurrentAmmo < Weapon->MaxAmmo)
 					{
-						// Gọi hàm Reload() trên vũ khí
-						Weapon->ReLoadAmmo(); // Gọi hàm Reload từ lớp vũ khí
-
-						// In ra tên vũ khí vừa nạp đạn
-					//	UKismetSystemLibrary::PrintString(this, FString::Printf(TEXT("Đã nạp đạn cho vũ khí: %s"), *Weapon->GetClass()->GetName()));
+						// Tạo timer để delay 3 giây
+						FTimerHandle ReloadTimerHandle;
+						// Đặt thời gian trễ 3 giây rồi mới gọi hàm ReloadAmmo
+						GetWorld()->GetTimerManager().SetTimer(ReloadTimerHandle, [Weapon](){Weapon->ReLoadAmmo();}, 1.0f, false); // 3.0f là thời gian trễ
 					}
 					else
 					{

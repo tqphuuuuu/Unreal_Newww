@@ -26,10 +26,7 @@ void AEnemy_Zombie::BeginPlay()
 void AEnemy_Zombie::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	if (Health <= 0)
-	{
-		Destroy();
-	}
+
 }
 
 // Called to bind functionality to input

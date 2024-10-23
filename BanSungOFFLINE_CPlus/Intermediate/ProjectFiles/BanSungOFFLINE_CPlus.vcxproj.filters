@@ -61,26 +61,26 @@
     <ClInclude Include="..\..\Source\BanSungOFFLINE_CPlus\BanSungOFFLINE_CPlusPlayerController.h">
       <Filter>Source\BanSungOFFLINE_CPlus</Filter>
     </ClInclude>
-    <Filter Include="Source\BanSungOFFLINE_CPlus\Enermy">
-      <UniqueIdentifier>{8E0ED3BC-8B38-3F77-B088-8583F1FD558A}</UniqueIdentifier>
+    <Filter Include="Source\BanSungOFFLINE_CPlus\Enemy">
+      <UniqueIdentifier>{4C16E260-7235-330F-97D0-D8FDE59E4201}</UniqueIdentifier>
     </Filter>
-    <ClCompile Include="..\..\Source\BanSungOFFLINE_CPlus\Enermy\Enermy.cpp">
-      <Filter>Source\BanSungOFFLINE_CPlus\Enermy</Filter>
+    <ClCompile Include="..\..\Source\BanSungOFFLINE_CPlus\Enemy\Enemy.cpp">
+      <Filter>Source\BanSungOFFLINE_CPlus\Enemy</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\BanSungOFFLINE_CPlus\Enermy\Enermy.h">
-      <Filter>Source\BanSungOFFLINE_CPlus\Enermy</Filter>
+    <ClInclude Include="..\..\Source\BanSungOFFLINE_CPlus\Enemy\Enemy.h">
+      <Filter>Source\BanSungOFFLINE_CPlus\Enemy</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\BanSungOFFLINE_CPlus\Enermy\Enermy_Boss.cpp">
-      <Filter>Source\BanSungOFFLINE_CPlus\Enermy</Filter>
+    <ClCompile Include="..\..\Source\BanSungOFFLINE_CPlus\Enemy\Enemy_Boss.cpp">
+      <Filter>Source\BanSungOFFLINE_CPlus\Enemy</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\BanSungOFFLINE_CPlus\Enermy\Enermy_Boss.h">
-      <Filter>Source\BanSungOFFLINE_CPlus\Enermy</Filter>
+    <ClInclude Include="..\..\Source\BanSungOFFLINE_CPlus\Enemy\Enemy_Boss.h">
+      <Filter>Source\BanSungOFFLINE_CPlus\Enemy</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\BanSungOFFLINE_CPlus\Enermy\Enermy_Zombie.cpp">
-      <Filter>Source\BanSungOFFLINE_CPlus\Enermy</Filter>
+    <ClCompile Include="..\..\Source\BanSungOFFLINE_CPlus\Enemy\Enemy_Zombie.cpp">
+      <Filter>Source\BanSungOFFLINE_CPlus\Enemy</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\BanSungOFFLINE_CPlus\Enermy\Enermy_Zombie.h">
-      <Filter>Source\BanSungOFFLINE_CPlus\Enermy</Filter>
+    <ClInclude Include="..\..\Source\BanSungOFFLINE_CPlus\Enemy\Enemy_Zombie.h">
+      <Filter>Source\BanSungOFFLINE_CPlus\Enemy</Filter>
     </ClInclude>
     <Filter Include="Source\BanSungOFFLINE_CPlus\ItemPickUp">
       <UniqueIdentifier>{C0479679-EA10-3F7B-8672-5837A136375A}</UniqueIdentifier>
@@ -129,6 +129,15 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\BanSungOFFLINE_CPlus\Projectiles\Projectiles_Rifle.h">
       <Filter>Source\BanSungOFFLINE_CPlus\Projectiles</Filter>
+    </ClInclude>
+    <Filter Include="Source\BanSungOFFLINE_CPlus\UI">
+      <UniqueIdentifier>{7E03358E-DE92-389C-AE8D-C6109750DD42}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\BanSungOFFLINE_CPlus\UI\WBP_HealthEnemy.cpp">
+      <Filter>Source\BanSungOFFLINE_CPlus\UI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BanSungOFFLINE_CPlus\UI\WBP_HealthEnemy.h">
+      <Filter>Source\BanSungOFFLINE_CPlus\UI</Filter>
     </ClInclude>
     <Filter Include="Source\BanSungOFFLINE_CPlus\Weapon">
       <UniqueIdentifier>{4D5A55B5-47E6-3155-97C3-63E802CDD2B1}</UniqueIdentifier>

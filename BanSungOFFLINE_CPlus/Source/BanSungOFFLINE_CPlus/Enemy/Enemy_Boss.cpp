@@ -25,10 +25,7 @@ void AEnemy_Boss::BeginPlay()
 void AEnemy_Boss::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	if (Health <= 0)
-	{
-		Destroy();
-	}
+	
 }
 
 // Called to bind functionality to input

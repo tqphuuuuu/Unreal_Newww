@@ -29,13 +29,16 @@ AEnemy::AEnemy()
 	
 	SphereComponent->OnComponentBeginOverlap.AddDynamic(this, &AEnemy::OnOverlap);
 
+	
+
 }
 
 // Called when the game starts or when spawned
 void AEnemy::BeginPlay()
 {
-	Super::BeginPlay();
-	
+	Super::BeginPlay();/*
+	UWBP_HealthWidget*WBP_HealthWidget = Cast <UWBP_HealthWidget>(WidgetComponent->GetUserWidgetObject());
+	WBP_HealthWidget->SetOwnerEnemy(this);*/
 }
 
 // Called every frame
@@ -79,7 +82,7 @@ void AEnemy::AttackCharacter()
 			ABanSungOFFLINE_CPlusPlayerController* PlayerController = Cast<ABanSungOFFLINE_CPlusPlayerController>(PlayerCharacter->GetController());
 			if (PlayerController)
 			{
-				if (Timer >= 300)
+				if (Timer >= 100)
 				{
 					Timer = 0;
 					PlayerController->Health -=Damage;
@@ -106,10 +109,52 @@ void AEnemy::OnOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, 
 		}
 
 	}
-	else
+	AProjectiles *Projectiles = Cast<AProjectiles>(OtherActor);
+	if (IsValid(Projectiles))
 	{
-		
+		Health -= Projectiles->Damage;
+			
+		CheckHealth();
+		if (Projectiles->Velocity.SquaredLength() > 0.1f)
+		{
+
+			Projectiles->Destroy();
+		}
 	}
+}
+
+void AEnemy::CheckHealth()
+{
+	if (Health <= 0 && !bIsDead)
+	{
+			bIsDead = true; // Đánh dấu rằng kẻ thù đã chết
+			PlayDeathAnimation(); // Gọi hàm chơi animation chết
+		UKismetSystemLibrary::PrintString(this,"CheckHealth");
+
+	}
+}
+
+void AEnemy::PlayDeathAnimation()
+{
+	UKismetSystemLibrary::PrintString(this,"PlayDeathAnimation");
+
+	// Kiểm tra nếu có DeathAnimation được cài đặt
+	if (DeathAnimation)
+	{
+		UKismetSystemLibrary::PrintString(this,"DeathAnimation");
+
+		GetMesh()->PlayAnimation(DeathAnimation, false); // Chơi animation một lần
+	}
+
+	
+	FTimerHandle TimerHandle;
+	GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AEnemy::OnDeathComplete, 2.0f, false); // Sau 2 giây huỷ kẻ thù
+}
+
+void AEnemy::OnDeathComplete()
+{
+	Destroy(); 
+	UKismetSystemLibrary::PrintString(this,"OnDeathComplete");
 }
 
 

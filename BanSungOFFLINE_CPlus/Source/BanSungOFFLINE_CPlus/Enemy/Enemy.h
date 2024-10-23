@@ -9,7 +9,7 @@
 #include "DrawDebugHelpers.h"
 #include "Components/WidgetComponent.h"
 #include "Enemy.generated.h"
-
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSetHealthWidget);
 UCLASS()
 class BANSUNGOFFLINE_CPLUS_API AEnemy : public ACharacter
 {
@@ -64,6 +64,8 @@ public:
 	UWidgetComponent* WidgetComponent;
 	*/
 
+	UPROPERTY(BlueprintAssignable)
+	FSetHealthWidget ShowHealthWidget;
 	
 	virtual void AttackCharacter();
 
@@ -76,7 +78,11 @@ public:
 	FTimerHandle _loopTimeHanlde;
 
 	int32 Timer = 0;
-	
+
+	void PlayDeathAnimation();
+	void CheckHealth();
+	void OnDeathComplete();
+	bool bIsDead = false;
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 

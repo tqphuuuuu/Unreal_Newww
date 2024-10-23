@@ -32,6 +32,7 @@ void AWeapon::BeginPlay()
 {
 	Super::BeginPlay();
 	
+	
 }
 
 // Called every frame
@@ -45,7 +46,7 @@ FTimerHandle TimerHandle_SpawnRifle;
 void AWeapon::Fire(FVector& JerryPosition)
 {
 	// Kiểm tra Type để quyết định loại đạn cần bắn
-	if (Type == 0)  // Type 0 là Pistol
+	if (Type == 0  )  // Type 0 là Pistol
 	{
 		
 		// Thực hiện bắn đạn Pistol
@@ -99,7 +100,7 @@ void AWeapon::FireShooting(FVector& JerryPosition)
 }
 
 void AWeapon::ReLoadAmmo()
-{
+{	
 	if (CurrentAmmo == MaxAmmo)  // Kiểm tra nếu băng đạn đã đầy
 	{
 		return;  // Không cần nạp đạn nếu băng đạn đã đầy
@@ -114,6 +115,7 @@ void AWeapon::ReLoadAmmo()
 		// Nạp đầy băng đạn và trừ đạn dự trữ
 		CurrentAmmo += AmmoNeededToFillClip;
 		Ammo -= AmmoNeededToFillClip;
+		
 	}
 	else
 	{
