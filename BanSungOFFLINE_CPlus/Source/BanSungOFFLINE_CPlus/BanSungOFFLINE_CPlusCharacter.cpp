@@ -74,7 +74,7 @@ void ABanSungOFFLINE_CPlusCharacter::AddWeapon(AWeapon* NewWeapon)
 			if (NewWeapon->GetClass() == WeaponClass)  
 			{  
 				Weapons.Add(NewWeapon);
-				UKismetSystemLibrary::PrintString(this, TEXT("Đã thêm vũ khí vào mảng."), true, true, FLinearColor::Green, 2.0f);
+				//UKismetSystemLibrary::PrintString(this, TEXT("Đã thêm vũ khí vào mảng."), true, true, FLinearColor::Green, 2.0f);
 				return;
 			}  
 		}  
@@ -85,9 +85,9 @@ void ABanSungOFFLINE_CPlusCharacter::AddWeapon(AWeapon* NewWeapon)
 void ABanSungOFFLINE_CPlusCharacter::NotifyActorBeginOverlap(AActor* OtherActor)
 {
 	Super::NotifyActorBeginOverlap(OtherActor); // Gọi phương thức lớp cơ sở
-	UKismetSystemLibrary::PrintString(this, OtherActor->GetName(), true, true, FLinearColor::Yellow, 2.0f);
+	//UKismetSystemLibrary::PrintString(this, OtherActor->GetName(), true, true, FLinearColor::Yellow, 2.0f);
 
-	// Kiểm tra nếu đối tượng va chạm là Pistol hoặc Rifle thông qua lớp cơ sở AWeapon
+	// Kiểm tra nếu đối tượng va chạm là Pistol hoặc Rifle thông qua AWeapon
 	if (OtherActor)
 	{
 		AWeapon* Weapon = Cast<AWeapon>(OtherActor);  // Kiểm tra nếu OtherActor là loại AWeapon
@@ -98,19 +98,14 @@ void ABanSungOFFLINE_CPlusCharacter::NotifyActorBeginOverlap(AActor* OtherActor)
 			
 			Weapons.Add(Weapon);  // Thêm Pistol vào mảng
 
-			UKismetSystemLibrary::PrintString(this, TEXT("Pistol được thêm vào mảng."), true, true, FLinearColor::Green, 2.0f);
+			//UKismetSystemLibrary::PrintString(this, TEXT("Pistol được thêm vào mảng."), true, true, FLinearColor::Green, 2.0f);
 			Weapon->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, TEXT("Socket_Weapon"));
 
-			///////////////////Đoạn này dùng để kiểm tra///////////////////////////////
-
 			int WeapontCout = Weapons.Num();
-			UKismetSystemLibrary::PrintString(this, FString::Printf(TEXT("Số lượng vũ khí trong mảng: %d"), WeapontCout), true, true, FLinearColor::Green, 2.0f);
+			//UKismetSystemLibrary::PrintString(this, FString::Printf(TEXT("Số lượng vũ khí trong mảng: %d"), WeapontCout), true, true, FLinearColor::Green, 2.0f);
 	
 			Weapon->SetActorHiddenInGame(true);
 			PrintAllWeaponsInArray();
-
-			////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	
 		}
 	}
 }
@@ -179,7 +174,7 @@ void ABanSungOFFLINE_CPlusCharacter::ShowWeapon(int32 Type)
 		}
 	}
 
-	// Nếu không tìm thấy vũ khí phù hợp với Type
+
 	UKismetSystemLibrary::PrintString(this, TEXT("Không tìm thấy vũ khí phù hợp."), true, true, FLinearColor::Red, 2.0f);
 }
 

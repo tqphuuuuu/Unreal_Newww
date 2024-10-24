@@ -47,6 +47,7 @@ void AProjectiles::Tick(float DeltaTime)
 		Destroy();
 	}
 }
+
 // Hàm được gọi khi viên đạn va chạm với một đối tượng khác
 /*
 void AProjectiles::OnOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor,

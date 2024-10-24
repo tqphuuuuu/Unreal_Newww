@@ -57,7 +57,7 @@ void AWeapon::Fire(FVector& JerryPosition)
 		FVector Temp = (JerryPosition - GetActorLocation());
 		Temp.Normalize();
 		Jerry->Velocity = Temp * SpeedAmmo;
-		UKismetSystemLibrary::PrintString(this,FString::SanitizeFloat(Jerry->Velocity.Length()));
+		//UKismetSystemLibrary::PrintString(this,FString::SanitizeFloat(Jerry->Velocity.Length()));
 
 	}
 	else
@@ -121,6 +121,6 @@ void AWeapon::ReLoadAmmo()
 	{
 		// Nếu không đủ đạn dự trữ, nạp hết đạn còn lại
 		CurrentAmmo += Ammo;  
-		Ammo = 0;  // Không còn đạn dự trữ
+		Ammo = 0; 
 	}
 }

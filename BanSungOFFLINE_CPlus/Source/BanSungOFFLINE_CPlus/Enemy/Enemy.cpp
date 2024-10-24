@@ -61,9 +61,8 @@ void AEnemy::AttackCharacter()
 	FVector End = GetMesh()->GetSocketLocation(FName("B"));
 
 	TArray<AActor*> IgnoreActors;
-	IgnoreActors.Add(this); // Bỏ qua "Enemy"
+	IgnoreActors.Add(this); 
 
-	// Thực hiện phép dò tia (Line Trace) từ "RightHand" đến "RightArm"
 	FHitResult HitResult;
 	bool bHit = UKismetSystemLibrary::LineTraceSingle(GetWorld(),Start,End,
 		static_cast<ETraceTypeQuery>(ECollisionChannel::ECC_Pawn),  // Thử với kênh Pawn
@@ -82,12 +81,16 @@ void AEnemy::AttackCharacter()
 			ABanSungOFFLINE_CPlusPlayerController* PlayerController = Cast<ABanSungOFFLINE_CPlusPlayerController>(PlayerCharacter->GetController());
 			if (PlayerController)
 			{
-				if (Timer >= 100)
+				if (Health >=0 )
 				{
-					Timer = 0;
-					PlayerController->Health -=Damage;
-					PlayerController->ShowHealth.Broadcast();
+					if (Timer >= 100)
+					{
+						Timer = 0;
+						PlayerController->Health -=Damage;
+						PlayerController->ShowHealth.Broadcast();
+					}
 				}
+				
 			}
 
 		}
@@ -127,34 +130,28 @@ void AEnemy::CheckHealth()
 {
 	if (Health <= 0 && !bIsDead)
 	{
-			bIsDead = true; // Đánh dấu rằng kẻ thù đã chết
-			PlayDeathAnimation(); // Gọi hàm chơi animation chết
-		UKismetSystemLibrary::PrintString(this,"CheckHealth");
+			bIsDead = true; 
+			PlayDeathAnimation(); 
 
 	}
 }
 
 void AEnemy::PlayDeathAnimation()
 {
-	UKismetSystemLibrary::PrintString(this,"PlayDeathAnimation");
 
-	// Kiểm tra nếu có DeathAnimation được cài đặt
 	if (DeathAnimation)
 	{
-		UKismetSystemLibrary::PrintString(this,"DeathAnimation");
-
-		GetMesh()->PlayAnimation(DeathAnimation, false); // Chơi animation một lần
+		GetMesh()->PlayAnimation(DeathAnimation, false); 
 	}
 
 	
 	FTimerHandle TimerHandle;
-	GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AEnemy::OnDeathComplete, 2.0f, false); // Sau 2 giây huỷ kẻ thù
+	GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AEnemy::OnDeathComplete, 2.0f, false); 
 }
 
 void AEnemy::OnDeathComplete()
 {
-	Destroy(); 
-	UKismetSystemLibrary::PrintString(this,"OnDeathComplete");
+	Destroy();
 }
 
 

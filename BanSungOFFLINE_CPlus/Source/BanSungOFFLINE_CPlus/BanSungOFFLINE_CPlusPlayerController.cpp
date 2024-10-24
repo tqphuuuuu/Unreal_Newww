@@ -24,8 +24,8 @@ ABanSungOFFLINE_CPlusPlayerController::ABanSungOFFLINE_CPlusPlayerController()
 	CachedDestination = FVector::ZeroVector;
 	FollowTime = 0.f;
 
-	Health = 50 ;
-	MaxHealth = 100 ;
+	Health = 40 ;
+	MaxHealth = 40 ;
 }
 
 void ABanSungOFFLINE_CPlusPlayerController::BeginPlay()
@@ -124,8 +124,6 @@ void ABanSungOFFLINE_CPlusPlayerController::OnSetDestinationTriggered()
 	{
 		CachedDestination = Hit.Location;
 	}
-	
-		// Lấy tham chiếu đến nhân vật
 		ABanSungOFFLINE_CPlusCharacter* MyCharacter = Cast<ABanSungOFFLINE_CPlusCharacter>(GetPawn());
 
 		if (!MyCharacter) return;
@@ -144,7 +142,7 @@ void ABanSungOFFLINE_CPlusPlayerController::OnSetDestinationTriggered()
 		// Nếu tìm thấy súng hiện tại
 		if (SelectedWeapon)
 		{
-			FString WeaponName = SelectedWeapon->GetName(); // Hoặc một thuộc tính khác mà bạn muốn
+			//FString WeaponName = SelectedWeapon->GetName(); // Hoặc một thuộc tính khác mà bạn muốn
 			//	UKismetSystemLibrary::PrintString(this, FString::Printf(TEXT("Selected Weapon: %s"), *WeaponName));
 
 			if (SelectedWeapon->CurrentAmmo >= 1)
@@ -222,9 +220,10 @@ void ABanSungOFFLINE_CPlusPlayerController::OnMoveAction(const FInputActionValue
 		// get right vector .
 		const FVector RightDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
 
-		// add movement 
-		GetPawn()->AddMovementInput(ForwardDirection, MovementVector.Y);
-		GetPawn()->AddMovementInput(RightDirection, MovementVector.X);
+		// add movement
+		
+		GetPawn()->AddMovementInput(ForwardDirection, MovementVector.X);
+		GetPawn()->AddMovementInput(RightDirection, MovementVector.Y);
 	}
 }
 void ABanSungOFFLINE_CPlusPlayerController::OnMouseReleased()
@@ -240,7 +239,6 @@ void ABanSungOFFLINE_CPlusPlayerController::OnMouseButtonReleased()
 }
 void ABanSungOFFLINE_CPlusPlayerController::OnKeyBoard_Pistol(const FInputActionValue& Value)
 {
-	// Log để kiểm tra xem phím bàn phím có được nhấn hay không
 	ABanSungOFFLINE_CPlusCharacter* MyCharacter = Cast<ABanSungOFFLINE_CPlusCharacter>(GetCharacter());
 	
 	if (MyCharacter)
@@ -264,9 +262,6 @@ void ABanSungOFFLINE_CPlusPlayerController::OnKeyBoard_Pistol(const FInputAction
 
 void ABanSungOFFLINE_CPlusPlayerController::OnKeyBoard_Rifle(const FInputActionValue& Value)
 {
-	// Log để kiểm tra xem phím bàn phím có được nhấn hay không
-
-
 	ABanSungOFFLINE_CPlusCharacter* MyCharacter = Cast<ABanSungOFFLINE_CPlusCharacter>(GetCharacter());
 	
 	
@@ -316,14 +311,14 @@ void ABanSungOFFLINE_CPlusPlayerController::OnKeyBoard_ReloadAmmo(const FInputAc
 					}
 					else
 					{
-						UKismetSystemLibrary::PrintString(this, TEXT("Băng đạn đã đầy cho vũ khí: ") + Weapon->GetClass()->GetName());
+						//UKismetSystemLibrary::PrintString(this, TEXT("Băng đạn đã đầy cho vũ khí: ") + Weapon->GetClass()->GetName());
 					}
 				}
 			}
 		}
 		else
 		{
-			UKismetSystemLibrary::PrintString(this, TEXT("Không có vũ khí nào được hiện."));
+			//UKismetSystemLibrary::PrintString(this, TEXT("Không có vũ khí nào được hiện."));
 		}
 	}
 }

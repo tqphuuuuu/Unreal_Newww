@@ -43,15 +43,15 @@ void AItemPickUp_Health::OnOverlap(UPrimitiveComponent* OverlappedComp, AActor* 
 		{
 
 			
-			if(PlayerController->Health <=90)
+			if(PlayerController->Health <= PlayerController->MaxHealth -5)
 			{
-				PlayerController->Health += 10;  
+				PlayerController->Health += 5;  
 				Destroy(); 
 				
 			}
 			else
 			{
-				PlayerController->Health = 100;
+				PlayerController->Health = PlayerController->MaxHealth;
 				Destroy();
 			}
 		}

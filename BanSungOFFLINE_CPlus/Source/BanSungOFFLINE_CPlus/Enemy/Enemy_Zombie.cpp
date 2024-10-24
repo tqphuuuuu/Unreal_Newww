@@ -12,7 +12,7 @@ AEnemy_Zombie::AEnemy_Zombie()
 
 	Health = 50;
 	MaxHealth = 50;
-	Damage = 5.f;
+	Damage = 2.f;
 }
 
 // Called when the game starts or when spawned

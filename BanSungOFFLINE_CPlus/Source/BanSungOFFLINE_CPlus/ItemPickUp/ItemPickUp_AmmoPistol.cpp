@@ -58,7 +58,7 @@ void AItemPickUp_AmmoPistol::OnOverlap(UPrimitiveComponent* OverlappedComp, AAct
 				}
 				else
 				{
-					UKismetSystemLibrary::PrintString(this, TEXT("Số lượng đạn đã đầy."), true, true, FLinearColor::Yellow, 2.0f);
+					//UKismetSystemLibrary::PrintString(this, TEXT("Số lượng đạn đã đầy."), true, true, FLinearColor::Yellow, 2.0f);
 				}
 				return; // Thoát hàm khi đã xử lý xong Pistol
 			}

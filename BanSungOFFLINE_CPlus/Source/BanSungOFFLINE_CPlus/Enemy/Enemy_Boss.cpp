@@ -9,9 +9,9 @@ AEnemy_Boss::AEnemy_Boss()
 {
 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-	Health = 100;
-	MaxHealth =100;
-	Damage = 10.f;
+	Health = 300;
+	MaxHealth =300;
+	Damage = 5.f;
 }
 
 // Called when the game starts or when spawned

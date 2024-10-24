@@ -57,6 +57,7 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Type")
 	int Type;
 
+	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "UI", meta = (AllowPrivateAccess = "true"))
 	UWidgetComponent* WidgetComponent;
 	/*
