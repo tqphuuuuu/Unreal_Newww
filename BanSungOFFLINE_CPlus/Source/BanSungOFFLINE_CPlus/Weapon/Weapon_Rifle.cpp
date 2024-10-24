@@ -11,8 +11,6 @@ AWeapon_Rifle::AWeapon_Rifle()
 	PrimaryActorTick.bCanEverTick = true;
 
 	Damage = 20.0f;
-	Range = 2000.0f;
-	FireRate = 0.5f;
 	Ammo =120;
 	MaxAmmo = 40;
 	CurrentAmmo = 40;

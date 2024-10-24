@@ -11,8 +11,6 @@ AWeapon_Pistol::AWeapon_Pistol()
 	PrimaryActorTick.bCanEverTick = true;
 
 	Damage = 10.0f;
-	Range = 500.0f;
-	FireRate = 2.0f;
 	Ammo= 45;
 	CurrentAmmo = 15;
 	MaxAmmo = 15;
