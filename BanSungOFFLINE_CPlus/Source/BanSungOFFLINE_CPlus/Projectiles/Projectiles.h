@@ -21,7 +21,12 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Coli")
 	class USphereComponent* SphereComponent;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Gun Properties")
+	float SpeedAmmo;
+    
 	FVector Velocity = {0.f,0.f,0.f};
+
+	void ProjectitleFly(FVector& JerryPosition);
 	
 
 protected:
@@ -32,9 +37,9 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	/*UFUNCTION()
+	UFUNCTION()
 	void OnOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp,
-		int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);*/
+		int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gun Properties")
 	float Damage;

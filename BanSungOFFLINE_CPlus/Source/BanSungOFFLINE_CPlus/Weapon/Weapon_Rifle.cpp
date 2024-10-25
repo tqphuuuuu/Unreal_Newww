@@ -15,7 +15,6 @@ AWeapon_Rifle::AWeapon_Rifle()
 	MaxAmmo = 40;
 	CurrentAmmo = 40;
 	Type =1;
-	SpeedAmmo = 50;
 }
 
 // Called when the game starts or when spawned

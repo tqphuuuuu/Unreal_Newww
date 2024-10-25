@@ -33,11 +33,9 @@ protected:
 
 	UPROPERTY(EditAnywhere,BlueprintReadOnly,Category=Input,meta=(AllowPrivateAccess = "true"))
 	TSubclassOf<AProjectiles_Rifle>Projectile_Rifle = AProjectiles_Rifle::StaticClass();
-
 	
-
-	
-
+	UPROPERTY(EditAnywhere,BlueprintReadOnly,Category=Input,meta=(AllowPrivateAccess = "true"))
+	TSubclassOf<AProjectiles> ProjectitlesClass;
 
 public:
 	// Called every frame
@@ -45,12 +43,6 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gun Properties")
 	float Damage;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gun Properties")
-	float Range;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gun Properties")
-	float FireRate;
 	//Ammo
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Gun Properties")
 	float Ammo;
@@ -58,8 +50,7 @@ public:
 	float MaxAmmo;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Gun Properties")
 	float CurrentAmmo;
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Gun Properties")
-	float SpeedAmmo;
+	
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Gun Properties")
 	int Type;

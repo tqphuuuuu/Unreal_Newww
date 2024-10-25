@@ -54,11 +54,11 @@ void AWeapon::Fire(FVector& JerryPosition)
 		//UKismetSystemLibrary::PrintString(this, x.GetLocation().ToString());
 
 		AProjectiles_Pistol* Jerry = GetWorld()->SpawnActor<AProjectiles_Pistol>(Projectile_Pistol, x);
-		FVector Temp = (JerryPosition - GetActorLocation());
+		/*FVector Temp = (JerryPosition - GetActorLocation());
 		Temp.Normalize();
-		Jerry->Velocity = Temp * SpeedAmmo;
-		//UKismetSystemLibrary::PrintString(this,FString::SanitizeFloat(Jerry->Velocity.Length()));
-
+		Jerry->Velocity = Temp * SpeedAmmo;*/
+		Jerry->ProjectitleFly(JerryPosition);
+		
 	}
 	else
 	{
@@ -68,9 +68,11 @@ void AWeapon::Fire(FVector& JerryPosition)
 			//	UKismetSystemLibrary::PrintString(this, x.GetLocation().ToString());
 
 			AProjectiles_Rifle* Jerry = GetWorld()->SpawnActor<AProjectiles_Rifle>(Projectile_Rifle, x);
-			FVector Temp = (JerryPosition - GetActorLocation());
+			/*FVector Temp = (JerryPosition - GetActorLocation());
 			Temp.Normalize();
-			Jerry->Velocity = Temp * SpeedAmmo;
+			Jerry->Velocity = Temp * SpeedAmmo;*/
+			Jerry->ProjectitleFly(JerryPosition);
+
 		}
 	}
 	

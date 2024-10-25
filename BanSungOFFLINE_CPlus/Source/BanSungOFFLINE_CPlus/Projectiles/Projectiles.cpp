@@ -22,7 +22,7 @@ AProjectiles::AProjectiles()
 	
 	Projectiles = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Gun_Pistol"));
 	Projectiles->SetupAttachment(SphereComponent);
-//	SphereComponent->OnComponentBeginOverlap.AddDynamic(this, &AProjectiles::OnOverlap);
+	SphereComponent->OnComponentBeginOverlap.AddDynamic(this, &AProjectiles::OnOverlap);
 }
 
 // Called when the game starts or when spawned
@@ -49,7 +49,7 @@ void AProjectiles::Tick(float DeltaTime)
 }
 
 // Hàm được gọi khi viên đạn va chạm với một đối tượng khác
-/*
+
 void AProjectiles::OnOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor,
 	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
@@ -69,4 +69,10 @@ void AProjectiles::OnOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherA
 	// Nếu muốn viên đạn bị phá hủy sau khi va chạm với bất kỳ đối tượng nào
 	// Destroy();
 }
-*/
+
+void AProjectiles::ProjectitleFly(FVector& JerryPosition)
+{
+	FVector  Temp = (JerryPosition - GetActorLocation());
+	Temp.Normalize();
+	Velocity = Temp * SpeedAmmo;
+}

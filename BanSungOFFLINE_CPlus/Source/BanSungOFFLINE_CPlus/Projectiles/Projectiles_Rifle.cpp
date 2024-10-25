@@ -11,6 +11,7 @@ AProjectiles_Rifle::AProjectiles_Rifle()
 	PrimaryActorTick.bCanEverTick = true;
 
 	Damage = 15;
+	SpeedAmmo = 2000.0;
 }
 
 // Called when the game starts or when spawned
