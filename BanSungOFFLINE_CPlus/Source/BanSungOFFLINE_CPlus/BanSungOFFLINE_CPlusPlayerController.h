@@ -107,10 +107,10 @@ protected:
 	void OnKeyBoard_Rifle(const FInputActionValue& Value);
 	void OnKeyBoard_ReloadAmmo(const FInputActionValue& Value);
 
-
-
 	bool bIsShooting = false; //  biến để theo dõi trạng thái bấm chuột
-
+	//Bắn đạn Rifle
+	FTimerHandle RifleFireTimerHandle;
+	bool bCanFireRifle = true;
 
 private:
 	FVector CachedDestination;
@@ -121,7 +121,9 @@ public:
 	bool FireShooting = false;
 	FVector DirectionMouse;
 
-	
+	bool isReloading = false;
+
+	void ReloadGun();
 };
 
 

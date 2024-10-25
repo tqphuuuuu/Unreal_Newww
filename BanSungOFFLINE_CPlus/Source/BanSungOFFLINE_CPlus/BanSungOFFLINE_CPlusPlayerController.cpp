@@ -37,7 +37,6 @@ void ABanSungOFFLINE_CPlusPlayerController::BeginPlay()
 void ABanSungOFFLINE_CPlusPlayerController::Tick(float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);
-
 	FHitResult HitResult;
 	bool bHitSuccessful = false;
 	bHitSuccessful = GetHitResultUnderCursor(ECollisionChannel::ECC_Visibility, true, HitResult);
@@ -76,18 +75,12 @@ void ABanSungOFFLINE_CPlusPlayerController::SetupInputComponent()
 
 
 		InputComponent->BindAction("Mouse Click", IE_Released, this, &ABanSungOFFLINE_CPlusPlayerController::OnMouseButtonReleased);
-	
-
-
+		
 		// Move W S A D
 		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &ABanSungOFFLINE_CPlusPlayerController::OnMoveAction);
 		EnhancedInputComponent->BindAction(Key_BoardPisol, ETriggerEvent::Triggered, this, &ABanSungOFFLINE_CPlusPlayerController::OnKeyBoard_Pistol);
 		EnhancedInputComponent->BindAction(Key_BoardRifle, ETriggerEvent::Triggered, this, &ABanSungOFFLINE_CPlusPlayerController::OnKeyBoard_Rifle);
 		EnhancedInputComponent->BindAction(keyBoardReloadAmmo, ETriggerEvent::Started, this, &ABanSungOFFLINE_CPlusPlayerController::OnKeyBoard_ReloadAmmo);
-
-		
-
-
 	}
 	else
 	{
@@ -104,10 +97,9 @@ void ABanSungOFFLINE_CPlusPlayerController::OnInputStarted()
 // Triggered every frame when the input is held down
 void ABanSungOFFLINE_CPlusPlayerController::OnSetDestinationTriggered()
 {
-	// We flag that the input is being pressed
+	// Logic ban đầu
 	FollowTime += GetWorld()->GetDeltaSeconds();
-	
-	// We look for the location in the world where the player has pressed the input
+    
 	FHitResult Hit;
 	bool bHitSuccessful = false;
 	if (bIsTouch)
@@ -119,53 +111,48 @@ void ABanSungOFFLINE_CPlusPlayerController::OnSetDestinationTriggered()
 		bHitSuccessful = GetHitResultUnderCursor(ECollisionChannel::ECC_Visibility, true, Hit);
 	}
 
-	// If we hit a surface, cache the location
 	if (bHitSuccessful)
 	{
 		CachedDestination = Hit.Location;
 	}
-		ABanSungOFFLINE_CPlusCharacter* MyCharacter = Cast<ABanSungOFFLINE_CPlusCharacter>(GetPawn());
 
-		if (!MyCharacter) return;
+	ABanSungOFFLINE_CPlusCharacter* MyCharacter = Cast<ABanSungOFFLINE_CPlusCharacter>(GetPawn());
 
-		// Tìm kiếm súng hiện tại trong mảng Weapons dựa trên loại Type
-		AWeapon* SelectedWeapon = nullptr;
-		for (AWeapon* Weapon : MyCharacter->Weapons)
+	if (!MyCharacter) return;
+
+	AWeapon* SelectedWeapon = nullptr;
+	for (AWeapon* Weapon : MyCharacter->Weapons)
+	{
+		if (Weapon && MyCharacter->IsWeaponVisible(Weapon->GetClass()))
 		{
-			if (Weapon && MyCharacter->IsWeaponVisible(Weapon->GetClass()))  // Kiểm tra xem súng nào đang hiển thị
+			SelectedWeapon = Weapon;
+			break;
+		}
+	}
+
+	if (SelectedWeapon && SelectedWeapon->CurrentAmmo >= 1)
+	{
+		if (SelectedWeapon->Type == 1 && !isReloading)  // Rifle
+		{
+			if (bCanFireRifle)  // Kiểm tra xem có thể bắn không
 			{
-				SelectedWeapon = Weapon;
-				break;  // Dừng vòng lặp sau khi tìm thấy súng đang hiển thị
+				SelectedWeapon->Fire(DirectionMouse);
+				bCanFireRifle = false;
+
+				GetWorld()->GetTimerManager().SetTimer(RifleFireTimerHandle, [this](){bCanFireRifle = true;}, 0.25f, false);
 			}
 		}
-
-		// Nếu tìm thấy súng hiện tại
-		if (SelectedWeapon)
+		else if (SelectedWeapon->Type == 0 && !isReloading )  // Pistol
 		{
-			//FString WeaponName = SelectedWeapon->GetName(); // Hoặc một thuộc tính khác mà bạn muốn
-			//	UKismetSystemLibrary::PrintString(this, FString::Printf(TEXT("Selected Weapon: %s"), *WeaponName));
-
-			if (SelectedWeapon->CurrentAmmo >= 1)
-			{
-				if (SelectedWeapon -> Type == 1)
-				{
-					ShootRate++;
-					if (ShootRate % 10 == 0)
-						Cast<AWeapon>(MyCharacter->CurrentWeapon)->Fire(DirectionMouse);
-				}
-				else if (SelectedWeapon->Type == 0 )
-				{
-					if (!ShootOneByOne)
-						Cast<AWeapon>(MyCharacter->CurrentWeapon)->Fire(CachedDestination);
-					ShootOneByOne = true;
-				}
-				
-			}
-			else
-			{
-				FireShooting = false;
-			}
+			if (!ShootOneByOne)
+				Cast<AWeapon>(MyCharacter->CurrentWeapon)->Fire(CachedDestination);
+			ShootOneByOne = true;
 		}
+	}
+	else
+	{
+		FireShooting = false;
+	}
 }
 
 
@@ -302,18 +289,20 @@ void ABanSungOFFLINE_CPlusPlayerController::OnKeyBoard_ReloadAmmo(const FInputAc
 				if (Weapon && Weapon->IsA(CurrentWeaponClass)) // Kiểm tra xem vũ khí có phải là loại hiện tại
 				{
 					// Kiểm tra nếu băng đạn cần nạp
-					if (Weapon->CurrentAmmo < Weapon->MaxAmmo)
+					if (Weapon->CurrentAmmo < Weapon->MaxAmmo && !isReloading)
 					{
+						isReloading = true;
 						// Tạo timer để delay 3 giây
 						FTimerHandle ReloadTimerHandle;
 						// Đặt thời gian trễ 3 giây rồi mới gọi hàm ReloadAmmo
-						GetWorld()->GetTimerManager().SetTimer(ReloadTimerHandle, [Weapon](){Weapon->ReLoadAmmo();}, 1.0f, false); // 3.0f là thời gian trễ
+						GetWorld()->GetTimerManager().SetTimer(ReloadTimerHandle, [this](){ReloadGun();}, 1.0f, false); // 3.0f là thời gian trễ
 					}
 					else
 					{
 						//UKismetSystemLibrary::PrintString(this, TEXT("Băng đạn đã đầy cho vũ khí: ") + Weapon->GetClass()->GetName());
 					}
 				}
+			
 			}
 		}
 		else
@@ -321,4 +310,10 @@ void ABanSungOFFLINE_CPlusPlayerController::OnKeyBoard_ReloadAmmo(const FInputAc
 			//UKismetSystemLibrary::PrintString(this, TEXT("Không có vũ khí nào được hiện."));
 		}
 	}
+}
+
+void ABanSungOFFLINE_CPlusPlayerController::ReloadGun()
+{
+	Cast<ABanSungOFFLINE_CPlusCharacter>(GetPawn())->CurrentWeapon->ReLoadAmmo();
+	isReloading = false;
 }

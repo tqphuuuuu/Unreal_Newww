@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "BanSungOFFLINE_CPlus/BanSungOFFLINE_CPlusPlayerController.h"
 #include "BanSungOFFLINE_CPlus/Projectiles/Projectiles_Pistol.h"
 #include "BanSungOFFLINE_CPlus/Projectiles/Projectiles_Rifle.h"
 #include "GameFramework/Actor.h"
@@ -27,12 +28,6 @@ protected:
 	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Coli")
 	class USphereComponent* SphereComponent;
-
-	UPROPERTY(EditAnywhere,BlueprintReadOnly,Category=Input,meta=(AllowPrivateAccess = "true"))
-	TSubclassOf<AProjectiles_Pistol> Projectile_Pistol= AProjectiles_Pistol::StaticClass();
-
-	UPROPERTY(EditAnywhere,BlueprintReadOnly,Category=Input,meta=(AllowPrivateAccess = "true"))
-	TSubclassOf<AProjectiles_Rifle>Projectile_Rifle = AProjectiles_Rifle::StaticClass();
 	
 	UPROPERTY(EditAnywhere,BlueprintReadOnly,Category=Input,meta=(AllowPrivateAccess = "true"))
 	TSubclassOf<AProjectiles> ProjectitlesClass;
@@ -51,19 +46,11 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Gun Properties")
 	float CurrentAmmo;
 	
-
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Gun Properties")
 	int Type;
-
+	
+	UFUNCTION()
 	void ReLoadAmmo();
-
-	
-
-
 	void FireShooting(FVector& JerryPosition);
-
-	
 	virtual void Fire(FVector& JerryPosition);
-
-	
 };

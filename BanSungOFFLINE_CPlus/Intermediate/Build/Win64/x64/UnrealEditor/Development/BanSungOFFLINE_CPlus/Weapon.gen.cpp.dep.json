@@ -7,6 +7,10 @@
         "Includes": [
             "c:\\users\\tqphuuuuu\\desktop\\githubnew\\unreal_newww\\bansungoffline_cplus\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\bansungoffline_cplus\\definitions.bansungoffline_cplus.h",
             "c:\\users\\tqphuuuuu\\desktop\\githubnew\\unreal_newww\\bansungoffline_cplus\\source\\bansungoffline_cplus\\weapon\\weapon.h",
+            "c:\\users\\tqphuuuuu\\desktop\\githubnew\\unreal_newww\\bansungoffline_cplus\\source\\bansungoffline_cplus\\bansungoffline_cplusplayercontroller.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\plugins\\enhancedinput\\source\\enhancedinput\\public\\inputactionvalue.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\plugins\\enhancedinput\\intermediate\\build\\win64\\unrealeditor\\inc\\enhancedinput\\uht\\inputactionvalue.generated.h",
+            "c:\\users\\tqphuuuuu\\desktop\\githubnew\\unreal_newww\\bansungoffline_cplus\\intermediate\\build\\win64\\unrealeditor\\inc\\bansungoffline_cplus\\uht\\bansungoffline_cplusplayercontroller.generated.h",
             "c:\\users\\tqphuuuuu\\desktop\\githubnew\\unreal_newww\\bansungoffline_cplus\\source\\bansungoffline_cplus\\projectiles\\projectiles_pistol.h",
             "c:\\users\\tqphuuuuu\\desktop\\githubnew\\unreal_newww\\bansungoffline_cplus\\source\\bansungoffline_cplus\\projectiles\\projectiles.h",
             "c:\\users\\tqphuuuuu\\desktop\\githubnew\\unreal_newww\\bansungoffline_cplus\\intermediate\\build\\win64\\unrealeditor\\inc\\bansungoffline_cplus\\uht\\projectiles.generated.h",

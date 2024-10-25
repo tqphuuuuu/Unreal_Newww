@@ -7,6 +7,7 @@
 #include "BanSungOFFLINE_CPlus/BanSungOFFLINE_CPlusPlayerController.h"
 #include "BanSungOFFLINE_CPlus/Enemy/Enemy.h"
 #include "Components/SphereComponent.h"
+#include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetSystemLibrary.h"
 
 
@@ -53,7 +54,7 @@ void AWeapon::Fire(FVector& JerryPosition)
 		FTransform x = GunMesh->GetSocketTransform("Socket_Point");
 		//UKismetSystemLibrary::PrintString(this, x.GetLocation().ToString());
 
-		AProjectiles_Pistol* Jerry = GetWorld()->SpawnActor<AProjectiles_Pistol>(Projectile_Pistol, x);
+		AProjectiles_Pistol* Jerry = GetWorld()->SpawnActor<AProjectiles_Pistol>(ProjectitlesClass, x);
 		/*FVector Temp = (JerryPosition - GetActorLocation());
 		Temp.Normalize();
 		Jerry->Velocity = Temp * SpeedAmmo;*/
@@ -67,10 +68,7 @@ void AWeapon::Fire(FVector& JerryPosition)
 			FTransform x = GunMesh->GetSocketTransform("Socket_Point");
 			//	UKismetSystemLibrary::PrintString(this, x.GetLocation().ToString());
 
-			AProjectiles_Rifle* Jerry = GetWorld()->SpawnActor<AProjectiles_Rifle>(Projectile_Rifle, x);
-			/*FVector Temp = (JerryPosition - GetActorLocation());
-			Temp.Normalize();
-			Jerry->Velocity = Temp * SpeedAmmo;*/
+			AProjectiles_Rifle* Jerry = GetWorld()->SpawnActor<AProjectiles_Rifle>(ProjectitlesClass, x);
 			Jerry->ProjectitleFly(JerryPosition);
 
 		}
@@ -117,10 +115,7 @@ void AWeapon::ReLoadAmmo()
 		// Nạp đầy băng đạn và trừ đạn dự trữ
 		CurrentAmmo += AmmoNeededToFillClip;
 		Ammo -= AmmoNeededToFillClip;
-		
-	}
-	else
-	{
+	} else {
 		// Nếu không đủ đạn dự trữ, nạp hết đạn còn lại
 		CurrentAmmo += Ammo;  
 		Ammo = 0; 
