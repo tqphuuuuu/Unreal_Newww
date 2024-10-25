@@ -27,8 +27,8 @@ AEnemy::AEnemy()
 	WidgetComponent->SetupAttachment(RootComponent);
 
 	
-	/*
-	SphereComponent->OnComponentBeginOverlap.AddDynamic(this, &AEnemy::OnOverlap);*/
+	
+	SphereComponent->OnComponentBeginOverlap.AddDynamic(this, &AEnemy::OnOverlap);
 
 	
 
@@ -99,7 +99,7 @@ void AEnemy::AttackCharacter()
 	}
 }
 
-/*void AEnemy::OnOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+void AEnemy::OnOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	// Kiểm tra nếu OtherActor là nhân vật
 	ACharacter* PlayerCharacter = Cast<ACharacter>(OtherActor);
@@ -116,8 +116,6 @@ void AEnemy::AttackCharacter()
 	AProjectiles *Projectiles = Cast<AProjectiles>(OtherActor);
 	if (IsValid(Projectiles))
 	{
-		Health -= Projectiles->Damage;
-			
 		CheckHealth();
 		if (Projectiles->Velocity.SquaredLength() > 0.1f)
 		{
@@ -125,7 +123,7 @@ void AEnemy::AttackCharacter()
 			Projectiles->Destroy();
 		}
 	}
-}*/
+}
 
 void AEnemy::CheckHealth()
 {
